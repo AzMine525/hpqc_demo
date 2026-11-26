@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "started_utc": "2026-11-26T13:01:46.462390+00:00",
+  "host": "LAPTOP-MNMLL0ST",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "python": "3.11.9",
+  "dependencies": {
+    "pqcrypto": "1.0.0",
+    "cryptography": "49.0.0",
+    "psutil": "7.2.2"
+  },
+  "source": {
+    "commit": "6da416e3c52995b066e465384af4f11ad7751449",
+    "sha256": {
+      "benchmark/run_experiment.py": "cc0e887bca4d0cb4adf53ea0ac6814241a9f7eb2fb6f1b9137a2222e11c2dac5",
+      "benchmark/workloads.py": "7e8049b5064fb27e9b20323d12b485b5001fad9d6228930089f0e387ddd73825",
+      "crypto_engine/__init__.py": "0007b37bef30bc93d13c148ecd8377008098e8b84602d7d67dd538c501dd17b1",
+      "crypto_engine/aead.py": "c51d5d1e1f053df3972540b7d61ab7e51a13a59918e179d24cba8c2be727174d",
+      "crypto_engine/kdf.py": "7a2475df5a7b82184aba552b4206f443f93845ad54fcbbcd15515e86dbed0cc3",
+      "crypto_engine/kem.py": "559670d794bacb383a1872414e24816ac00b62bb96d0dcae1c09397a9869ef09",
+      "crypto_engine/v2/__init__.py": "6ef3ea35cc6a2e4cd8733de05e13c054beed12a421548181f95a43b7e8c6a405",
+      "crypto_engine/v2/_validation.py": "654cba5699474fe77ec10425781c0cb0b521624283dc6dd98661de5d6715d150",
+      "crypto_engine/v2/aead.py": "e9d2368923d5586c9b7cf5fcc70c87ed66c88855626b38ed9c623f256050b808",
+      "crypto_engine/v2/kdf.py": "55c79e08c12e6d969d8d8feacb7764981938b41988104af07f0dfe2c4d6ae05a",
+      "crypto_engine/v2/kem.py": "d75f43de1a90d0351babf66e646b148d5eafb564ade12c967c3dbb7c692c1c48",
+      "crypto_engine/v2/suites.py": "1cbcc36d6ec8d5781e476cf5bd90b0fa49d17f4189e5a535c566551783536959",
+      "protocol/__init__.py": "dff3ae1ddc00edde6d959919b0829dfb1b76e073544a82fecc68885ee3260945",
+      "protocol/data_v2.py": "2233438173e609ac40a022c20f9b9c525905bb070d3bff8f4d491e0209cdfa19",
+      "protocol/handshake.py": "c428c0cb1ff3074f4c365266158c8d5beab61adaeb19c435e6768ce0fbe96be1",
+      "protocol/handshake_cli.py": "fce3fc09ade8c35b453d4a4479fa90195f178c270442f8f85613c00ca85db348",
+      "protocol/handshake_v2.py": "9abc376b1c57c8dbbd8ecff337bf0f2654924abba4ac2ecaf1308576c3d05dec",
+      "protocol/session.py": "fb2d5bf6aec9e32f6eb96ab9b7f56753cbc42cc2e603bcb3df5161261cbeff40",
+      "protocol/transfer_cli.py": "b657376d8d8f1f033314b2e87eab5b27c17a3686cb012a32e250253e7b27079c",
+      "protocol/transport.py": "9256a79f1bfcd81b96a41fd15300957e990d66a029f4b48e78f60b4cfe9c213e"
+    }
+  },
+  "command": [
+    "C:\\Users\\Acer\\AppData\\Local\\Python\\pythoncore-3.11-64\\python.exe",
+    "-B",
+    "-m",
+    "benchmark.run_experiment",
+    "--output",
+    "results/stage08/windows-loopback-02",
+    "--warmup",
+    "3",
+    "--trials",
+    "20"
+  ],
+  "suites": {
+    "ml-kem-768": 1,
+    "ml-kem-512": 2,
+    "ml-kem-1024": 3,
+    "rsa-2048-oaep": 4
+  },
+  "modes": [
+    "crypto",
+    "network"
+  ],
+  "loopback": "127.0.0.1",
+  "payload_bytes": [
+    1024,
+    102400,
+    1048576
+  ],
+  "warmup": 3,
+  "trials": 20,
+  "timeout_s": 10.0,
+  "attempts": 368,
+  "failures": 0,
+  "finished_utc": "2026-11-26T13:02:13.948637+00:00"
+}

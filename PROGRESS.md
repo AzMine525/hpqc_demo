@@ -1,5 +1,54 @@
 # Log pengembangan dan verifikasi HPQC
 
+## 26 November 2026 — Stage 09, pemulihan pengiriman
+
+**Implementasi dan uji Windows loopback PASS. Penerimaan keseluruhan Stage 09 masih parsial.** Matriks impairment Linux, pemeriksaan rute pengelolaan secara langsung, serta rollback qdisc nyata pada guest berstatus **NOT RUN**. Pemeriksaan XML VirtualBox baca-saja menemukan hanya slot 0 aktif pada masing-masing Ubuntu-PQC dan Debian-PQC, keduanya NATNetwork PQC-LAB. Status akses konsol dan rute SSH aktif memerlukan pemeriksaan operator sebelum menjalankan panduan dengan izin eksplisit.
+
+Pada preflight, `git --no-optional-locks status`, `git rev-parse HEAD` dan pembacaan manifest menunjukkan branch `step07` pada `6da416e3c52995b066e465384af4f11ad7751449` dengan perubahan Stage 08 di working tree. Hash source pada manifest Stage 08, ketiga CSV, transkrip dan arsip prototipe cocok dengan bukti sebelumnya. Stage 08 telah memenuhi kriteria lokal dengan 368/368 percobaan dan regresi 74/74. Source dan bukti Stage 08 dipertahankan saat Stage 09 ditambahkan.
+
+Perubahan mencakup CLI dan lapisan aplikasi di `protocol/resilience_cli.py` serta `protocol/resilience.py`, klasifikasi error transport handshake di `protocol/handshake_v2.py`, dan akses ID sesi publik di `protocol/data_v2.py`. Setiap reconnect menjalankan handshake baru dengan PSK dan suite yang sama. ID pesan aplikasi tetap sepanjang retry. Inbox SQLite melakukan commit sebelum mengirim receipt dan memeriksa kesamaan payload saat menerima ID yang pernah diproses. Benchmark ada di `benchmark/bench_resilience.py` dan tes ada di `tests/test_resilience.py`. [Format, alur operasi dan panduan tc netem](docs/resilience.md)
+
+| Pemeriksaan aktual | Hasil |
+|---|---|
+| `python -B -m protocol.resilience_cli --help`, `python -B -m benchmark.bench_resilience --help`, `python -B smoke_test.py` | Exit 0. CLI tersedia. Agreement serta dekripsi baseline berhasil. |
+| `python -B -m unittest discover -s tests -p test_resilience.py -v` | **6/6 PASS**. Uji kehilangan receipt, sesi baru, heartbeat terjadwal, timeout peer diam, PSK salah, retry/backoff terbatas, ID keliru dengan payload berbeda, database dibuka kembali, dan dua proses CLI menggunakan ML-KEM-512. |
+| `python -B -m benchmark.bench_resilience --output results/stage09/loopback.json` | Exit 0. Pada 20.18 WIB, host Windows build 26300, CPython 3.11.9, pqcrypto 1.0.0, cryptography 49.0.0. Mode normal ML-KEM-768 mengonfirmasi 3/3 pesan, 3 baris inbox, nol duplikat. Outage layanan 200 ms mengonfirmasi 3/3 pesan, 3 baris, 1 kiriman ulang dikenali, serta 0 receipt selama dan 2 sesudah outage. [Event, kebijakan skenario dalam source teridentifikasi, dan metrik mentah](results/stage09/loopback.json) |
+| Penghitungan dari jam monotonic client | Sesudah deteksi pertama, TCP tersambung pada 41,514 ms. Koneksi yang kemudian menyelesaikan handshake tersambung pada 266,167 ms. Sesi aman siap pada 270,239 ms dan receipt pesan diperoleh pada 272,833 ms. Tiga interupsi transport dalam sembilan percobaan DATA/heartbeat, nol timeout pada run outage. |
+| `python -B -m unittest discover -s tests -v` | **80/80 PASS**, 19,431 detik, tanpa skip. [Transkrip lengkap](results/stage09/test-results.txt) |
+| Blok Bash dari panduan, `bash --noprofile --norc -n` dan eksekusi dengan fungsi pengganti untuk `ip`, `tc`, `sleep` | Sintaks PASS. Pada simulasi, 9/9 profil melewati pemasangan dan rollback, 5/5 kondisi penolakan berhenti sebelum perubahan (rute bersama, peer SSH keliru, gagal membaca class atau filter, nama profil keliru). Rollback qdisc dalam kernel Linux masih NOT RUN. |
+| `python -B -` dengan `compile`, `hashlib` dan pemeriksaan tautan lokal, lalu `git diff --check` | PASS. SHA-256 event JSON `819460c00b1f1d7ab9fd620505805416f9fec4a77af1269824b04351e223a93f` dan transkrip `b929cd9a6f90d301b5ed5b3b7fe057b119bcf7d33a1db9ffa3f6fe44d2e4d9d6`. Lima hash source pada JSON cocok. |
+
+Eksperimen memutus layanan aplikasi sesudah transaksi inbox selesai sambil mempertahankan listener TCP. Hasilnya mendukung analisis recovery aplikasi dan deduplikasi. Klaim loss, jitter, retransmisi dan recovery guest memerlukan pengukuran Linux sesuai matriks pada panduan. Pemeriksaan dan perubahan dibatasi sampai Stage 09.
+
+## 26 November 2026 — Stage 08, benchmark otomatis
+
+**Status akhir. Kriteria Stage 08 lulus pada Windows TCP loopback.** Preflight baca-saja menemukan branch `step07` bersih pada `6da416e3c52995b066e465384af4f11ad7751449`. SHA-256 transkrip Stage 07 cocok dan memuat 69 hasil OK. Enam tes `test_agility.py` lulus ulang, termasuk agreement, DATA/ACK, replay, PSK salah dan seluruh kombinasi suite berbeda. Tes CLI dan uji silang ID 1 tercatat dalam bukti Stage 07. SHA-256 arsip prototipe dan kedua PCAP Stage 06 cocok dengan catatan sebelumnya.
+
+Benchmark ditambahkan pada `benchmark/workloads.py` dan `benchmark/run_experiment.py`. Runner memakai engine dan channel produksi dengan PSK, payload dan material sesi sintetis dalam memori. Pengukuran lokal dan TCP dikumpulkan per suite. Durasi wall memakai `perf_counter_ns()`, CPU proses memakai `process_time_ns()`, dan RSS berasal dari snapshot psutil awal/akhir. Network trial memakai satu sesi baru per ukuran dengan satu DATA/ACK dari setiap arah. [Metode sampling, definisi metrik, batas interpretasi dan panduan lintas platform](docs/benchmark.md)
+
+| Command atau pemeriksaan aktual | Hasil |
+|---|---|
+| `python -B -m unittest discover -s tests -p test_agility.py -v` | PASS 6/6 saat preflight, sebelum source diedit. |
+| `python -B -m unittest discover -s tests -p test_benchmark.py -v` | PASS 5/5 saat integrasi. Mencakup agregasi, data kosong, ACK/payload salah, kegagalan handshake, TCP_INFO dengan fixture, dan CSV dari transfer loopback nyata. |
+| `python -B -m benchmark.run_experiment --help` dan `python -B smoke_test.py` | Keduanya exit 0. CLI menampilkan opsi pemilihan suite serta mode. Smoke test mengonfirmasi agreement ML-KEM dan dekripsi AES-GCM. |
+| `python -B -m benchmark.run_experiment --output results/stage08/windows-loopback-01 --warmup 3 --trials 20` | Exit 0 dengan 368 percobaan tanpa kegagalan workload. Pemeriksaan CSV menemukan baris status `trial` ikut menghasilkan grup statistik kosong. Agregator diperbaiki dan assertion ditambahkan. Artefak awal dipindahkan ke cache workspace `__pycache__/stage08-initial-run/`. |
+| `python -B -m unittest discover -s tests -v` | Regresi final **74/74 PASS** tanpa skip, 8,949 detik. [Transkrip](results/stage08/test-results.txt) |
+| `python -B -m benchmark.run_experiment --output results/stage08/windows-loopback-02 --warmup 3 --trials 20` | Exit 0. **368/368** percobaan workload sukses, terdiri dari 48 warm-up dan 320 terukur. Fase terukur mencakup 80 trial kriptografi lokal dan 240 sesi TCP. **480/480** DATA/ACK terukur terverifikasi, ditambah 72/72 pada warm-up. [Manifest](results/stage08/windows-loopback-02/manifest.json) |
+| `python -B -` memakai `csv`, `statistics`, `hashlib`, dan `compile`, serta `git diff --check` | PASS setelah perbaikan. Hitung ulang 340 grup dari 8.188 baris raw, verifikasi 20 trial per grup, semua ukuran handshake, hash source dan statistik. File Python benchmark lolos kompilasi. |
+
+Run final dimulai sekitar 20.01 WIB pada host Windows build 26300 dengan CPython 3.11.9, pqcrypto 1.0.0, cryptography 49.0.0 dan psutil 7.2.2. Manifest mencatat identitas host, versi, argumen aktual dan SHA-256 source. Pada payload 100 KiB, contoh median terukur dari 20 trial per suite ditampilkan di bawah. Goodput dan RTT mengacu pada client ke server.
+
+| Suite | Keygen lokal (ms) | Handshake (ms) | Handshake (byte) | RTT (ms) | Goodput (MiB/s) |
+|---|---:|---:|---:|---:|---:|
+| ML-KEM-768 | 0,395 | 4,588 | 2.520 | 1,303 | 74,94 |
+| ML-KEM-512 | 0,264 | 4,087 | 1.816 | 1,372 | 71,17 |
+| ML-KEM-1024 | 0,605 | 5,469 | 3.384 | 1,415 | 69,02 |
+| RSA-2048-OAEP | 191,420 | 209,453 | 798 | 1,477 | 66,14 |
+
+[Raw kriptografi](results/stage08/windows-loopback-02/crypto_raw.csv) · [Raw komunikasi](results/stage08/windows-loopback-02/network_raw.csv) · [Mean, median, SD, dan p95](results/stage08/windows-loopback-02/summary.csv)
+
+Retransmisi Windows berstatus `unavailable` untuk semua 480 observasi terukur. Pembacaan Linux TCP_INFO diperiksa dengan fixture. Eksekusi di Ubuntu dan Debian **NOT RUN**. Hasil menggambarkan loopback pada satu host, CPU gabungan kedua peran, dan RSS pada batas operasi. Dataset memungkinkan perhitungan ulang biaya pembentukan secret, biaya wire, dan metrik delivery DATA/ACK untuk skripsi. Validasi pengguna diperlukan sebelum Stage 09.
+
 ## 26 November 2026 — Stage 07, crypto-agility
 
 **Checkpoint sebelum implementasi.** Pada `main` di `f181af3aff2b8c0a1412b43c72dec9e67d652183`, pemeriksaan `git status`, `git diff`, file baru dan source menemukan pekerjaan Stage 06 di working tree serta konstanta suite 1 di protokol. Proses sebelumnya berhenti sesudah preflight dan probe API, sebelum implementasi Stage 07 atau koreksi dokumentasi. ZIP baseline cocok dengan hash tercatat. Lima tes bukti Stage 06 lulus saat preflight. Transkrip 63 tes, tiga file alat/tes dan kedua PCAP tersedia. `Get-FileHash` mengonfirmasi hash PCAP dan hash asli transkrip. Dua digit yang terlewat saat menyalin hash transkrip diperbaiki di [laporan Stage 06](docs/security_testing.md).

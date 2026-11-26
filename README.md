@@ -1,5 +1,9 @@
 # HPQC two-way chat demo
 
+**Stage 09** menyediakan `python -B -m protocol.resilience_cli` untuk pengiriman dengan heartbeat, reconnect, dan inbox yang mengenali kiriman ulang setelah sesi berganti. [Panduan dua terminal, metrik recovery dan rollback tc netem](docs/resilience.md)
+
+**Stage 08** menyediakan `python -B -m benchmark.run_experiment` untuk mengukur empat suite v2. Runner mengekspor pengukuran kriptografi lokal dan TCP loopback, ringkasan statistik, serta manifest reproduksi. [Cara menjalankan dan membaca dataset](docs/benchmark.md)
+
 **Stage 07** menyediakan `--suite` pada CLI handshake dan transfer v2. Pilih satu suite yang sama di kedua endpoint. Default `ml-kem-768` memakai ID 1 dan kompatibel dengan endpoint v2 Stage 06. [Pilihan suite, format wire, perintah dan bukti pengujian](docs/crypto_agility.md)
 
 **Stage 06** menguji penolakan tampering dan replay, lalu membandingkan pengiriman payload yang sama pada kontrol plaintext dan HPQC v2 melalui TCP loopback. Perintah reproduksi, matriks penerimaan, dua packet capture, dan transkrip regresi tersedia di [laporan pengujian keamanan](docs/security_testing.md).

@@ -1,0 +1,488 @@
+{
+  "started": "2026-11-26T13:18:23.809278+00:00",
+  "host": "LAPTOP-MNMLL0ST",
+  "os": "Windows-10-10.0.26300-SP0",
+  "python": "3.11.9",
+  "suite": "ml-kem-768",
+  "versions": {
+    "pqcrypto": "1.0.0",
+    "cryptography": "49.0.0"
+  },
+  "source_sha256": {
+    "protocol/data_v2.py": "5e740da6a9247d51b95b1533de532f53f544eb55c481bb64b26a16bf772cbe7d",
+    "protocol/handshake_v2.py": "30bf3ffde41f5154a48f1a09719163508d576ccb39ec94aaed8c199c77264b1a",
+    "protocol/resilience.py": "6eb5a3ac6d1a42222800fc18930494cd9f8e27ce8cb24d6664b99a152797f304",
+    "protocol/resilience_cli.py": "82f5961fd1787e401bf43c606d8dcff148e2cea2dfa0d56753ecb9f23911f841",
+    "benchmark/bench_resilience.py": "f85335242d746917ced1489a6df2cea89a1393558c4f40be92c2356880e75e5a"
+  },
+  "trials": [
+    {
+      "scenario": "normal",
+      "events": [
+        {
+          "side": "client",
+          "at_ns": 116154626730000,
+          "event": "attempt_started",
+          "attempt": 1,
+          "id": "f3385ef85bd78abf7c3dffc71caa52a0",
+          "since_detection_ns": null,
+          "operation": "message"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154639859600,
+          "event": "tcp_connected",
+          "attempt": 1,
+          "id": "f3385ef85bd78abf7c3dffc71caa52a0",
+          "since_detection_ns": null
+        },
+        {
+          "side": "client",
+          "at_ns": 116154655593300,
+          "event": "secure_ready",
+          "attempt": 1,
+          "id": "f3385ef85bd78abf7c3dffc71caa52a0",
+          "since_detection_ns": null,
+          "session": "9b8736982ed93cfa893027adbec160f7"
+        },
+        {
+          "side": "server",
+          "at_ns": 116154668416200,
+          "event": "committed",
+          "id": "f3385ef85bd78abf7c3dffc71caa52a0"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154669342200,
+          "event": "delivered",
+          "attempt": 1,
+          "id": "f3385ef85bd78abf7c3dffc71caa52a0",
+          "since_detection_ns": null
+        },
+        {
+          "side": "client",
+          "at_ns": 116154669392900,
+          "event": "attempt_started",
+          "attempt": 1,
+          "id": "53230855efd89b0b1d27142f0258a67d",
+          "since_detection_ns": null,
+          "operation": "heartbeat"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154670997700,
+          "event": "pong",
+          "attempt": 1,
+          "id": "53230855efd89b0b1d27142f0258a67d",
+          "since_detection_ns": null
+        },
+        {
+          "side": "client",
+          "at_ns": 116154671041100,
+          "event": "attempt_started",
+          "attempt": 1,
+          "id": "29d5249e5902b22b10aba61de766bf9f",
+          "since_detection_ns": null,
+          "operation": "message"
+        },
+        {
+          "side": "server",
+          "at_ns": 116154681349400,
+          "event": "committed",
+          "id": "29d5249e5902b22b10aba61de766bf9f"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154682257500,
+          "event": "delivered",
+          "attempt": 1,
+          "id": "29d5249e5902b22b10aba61de766bf9f",
+          "since_detection_ns": null
+        },
+        {
+          "side": "client",
+          "at_ns": 116154682309300,
+          "event": "attempt_started",
+          "attempt": 1,
+          "id": "409f046a36fbdb62bcd7e4bc05aec8f5",
+          "since_detection_ns": null,
+          "operation": "heartbeat"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154683938600,
+          "event": "pong",
+          "attempt": 1,
+          "id": "409f046a36fbdb62bcd7e4bc05aec8f5",
+          "since_detection_ns": null
+        },
+        {
+          "side": "client",
+          "at_ns": 116154683986700,
+          "event": "attempt_started",
+          "attempt": 1,
+          "id": "b3bd251f9c1b7196455e8f674acfeeab",
+          "since_detection_ns": null,
+          "operation": "message"
+        },
+        {
+          "side": "server",
+          "at_ns": 116154695525600,
+          "event": "committed",
+          "id": "b3bd251f9c1b7196455e8f674acfeeab"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154696302700,
+          "event": "delivered",
+          "attempt": 1,
+          "id": "b3bd251f9c1b7196455e8f674acfeeab",
+          "since_detection_ns": null
+        },
+        {
+          "side": "client",
+          "at_ns": 116154696353600,
+          "event": "attempt_started",
+          "attempt": 1,
+          "id": "377afd01beafef4a15075cd92b1d61c0",
+          "since_detection_ns": null,
+          "operation": "heartbeat"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154697535000,
+          "event": "pong",
+          "attempt": 1,
+          "id": "377afd01beafef4a15075cd92b1d61c0",
+          "since_detection_ns": null
+        },
+        {
+          "side": "server",
+          "at_ns": 116154698445200,
+          "event": "closed",
+          "error": "EOFError"
+        }
+      ],
+      "acknowledged": 3,
+      "inbox_rows": 3,
+      "duplicates": 0,
+      "planned_messages": 3,
+      "delivery_ratio": 1.0,
+      "tcp_recovery_ns": null,
+      "secure_recovery_ns": null,
+      "delivery_recovery_ns": null,
+      "confirmed_connection_tcp_ns": null,
+      "receipts_during_outage": null,
+      "receipts_after_outage": null,
+      "attempts": 6,
+      "timeouts": 0,
+      "timeout_rate": 0.0,
+      "interruptions": 0
+    },
+    {
+      "scenario": "temporary_service_outage",
+      "events": [
+        {
+          "side": "client",
+          "at_ns": 116154704606600,
+          "event": "attempt_started",
+          "attempt": 1,
+          "id": "865ed1abf07671f978c3808fa1c4f2bc",
+          "since_detection_ns": null,
+          "operation": "message"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154705573500,
+          "event": "tcp_connected",
+          "attempt": 1,
+          "id": "865ed1abf07671f978c3808fa1c4f2bc",
+          "since_detection_ns": null
+        },
+        {
+          "side": "client",
+          "at_ns": 116154723706900,
+          "event": "secure_ready",
+          "attempt": 1,
+          "id": "865ed1abf07671f978c3808fa1c4f2bc",
+          "since_detection_ns": null,
+          "session": "c53a3d8dab7451868de828336df2efca"
+        },
+        {
+          "side": "server",
+          "at_ns": 116154735927500,
+          "event": "committed",
+          "id": "865ed1abf07671f978c3808fa1c4f2bc"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154736693400,
+          "event": "delivered",
+          "attempt": 1,
+          "id": "865ed1abf07671f978c3808fa1c4f2bc",
+          "since_detection_ns": null
+        },
+        {
+          "side": "client",
+          "at_ns": 116154736743500,
+          "event": "attempt_started",
+          "attempt": 1,
+          "id": "7dccba702987bb936ccc1b53f0825846",
+          "since_detection_ns": null,
+          "operation": "heartbeat"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154738000500,
+          "event": "pong",
+          "attempt": 1,
+          "id": "7dccba702987bb936ccc1b53f0825846",
+          "since_detection_ns": null
+        },
+        {
+          "side": "client",
+          "at_ns": 116154738042300,
+          "event": "attempt_started",
+          "attempt": 1,
+          "id": "aa4b672e13fa176c2f90e495190d247b",
+          "since_detection_ns": null,
+          "operation": "message"
+        },
+        {
+          "side": "server",
+          "at_ns": 116154748807200,
+          "event": "committed",
+          "id": "aa4b672e13fa176c2f90e495190d247b"
+        },
+        {
+          "side": "server",
+          "at_ns": 116154748831100,
+          "event": "outage_started",
+          "available_from_ns": 116154948827000
+        },
+        {
+          "side": "server",
+          "at_ns": 116154749086400,
+          "event": "closed",
+          "error": "ConnectionAbortedError"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154749552900,
+          "event": "interrupted",
+          "attempt": 1,
+          "id": "aa4b672e13fa176c2f90e495190d247b",
+          "since_detection_ns": 18200,
+          "error": "EOFError"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154749585100,
+          "event": "backoff",
+          "attempt": 1,
+          "id": "aa4b672e13fa176c2f90e495190d247b",
+          "since_detection_ns": 50400,
+          "seconds": 0.04
+        },
+        {
+          "side": "client",
+          "at_ns": 116154790075300,
+          "event": "attempt_started",
+          "attempt": 2,
+          "id": "aa4b672e13fa176c2f90e495190d247b",
+          "since_detection_ns": 40540600,
+          "operation": "message"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154791048200,
+          "event": "tcp_connected",
+          "attempt": 2,
+          "id": "aa4b672e13fa176c2f90e495190d247b",
+          "since_detection_ns": 41513500
+        },
+        {
+          "side": "server",
+          "at_ns": 116154791470100,
+          "event": "service_unavailable"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154792051200,
+          "event": "interrupted",
+          "attempt": 2,
+          "id": "aa4b672e13fa176c2f90e495190d247b",
+          "since_detection_ns": 42516500,
+          "error": "HandshakeTransportError"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154792079500,
+          "event": "backoff",
+          "attempt": 2,
+          "id": "aa4b672e13fa176c2f90e495190d247b",
+          "since_detection_ns": 42544800,
+          "seconds": 0.08
+        },
+        {
+          "side": "client",
+          "at_ns": 116154872291300,
+          "event": "attempt_started",
+          "attempt": 3,
+          "id": "aa4b672e13fa176c2f90e495190d247b",
+          "since_detection_ns": 122756600,
+          "operation": "message"
+        },
+        {
+          "side": "server",
+          "at_ns": 116154873328800,
+          "event": "service_unavailable"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154882718700,
+          "event": "tcp_connected",
+          "attempt": 3,
+          "id": "aa4b672e13fa176c2f90e495190d247b",
+          "since_detection_ns": 133184000
+        },
+        {
+          "side": "client",
+          "at_ns": 116154883521200,
+          "event": "interrupted",
+          "attempt": 3,
+          "id": "aa4b672e13fa176c2f90e495190d247b",
+          "since_detection_ns": 133986500,
+          "error": "HandshakeTransportError"
+        },
+        {
+          "side": "client",
+          "at_ns": 116154883553300,
+          "event": "backoff",
+          "attempt": 3,
+          "id": "aa4b672e13fa176c2f90e495190d247b",
+          "since_detection_ns": 134018600,
+          "seconds": 0.12
+        },
+        {
+          "side": "client",
+          "at_ns": 116155004001700,
+          "event": "attempt_started",
+          "attempt": 4,
+          "id": "aa4b672e13fa176c2f90e495190d247b",
+          "since_detection_ns": 254467000,
+          "operation": "message"
+        },
+        {
+          "side": "client",
+          "at_ns": 116155015701800,
+          "event": "tcp_connected",
+          "attempt": 4,
+          "id": "aa4b672e13fa176c2f90e495190d247b",
+          "since_detection_ns": 266167100
+        },
+        {
+          "side": "client",
+          "at_ns": 116155019773400,
+          "event": "secure_ready",
+          "attempt": 4,
+          "id": "aa4b672e13fa176c2f90e495190d247b",
+          "since_detection_ns": 270238700,
+          "session": "c00234c9f2971fc1039001badce7ecd7"
+        },
+        {
+          "side": "server",
+          "at_ns": 116155021852000,
+          "event": "duplicate",
+          "id": "aa4b672e13fa176c2f90e495190d247b"
+        },
+        {
+          "side": "client",
+          "at_ns": 116155022367300,
+          "event": "delivered",
+          "attempt": 4,
+          "id": "aa4b672e13fa176c2f90e495190d247b",
+          "since_detection_ns": 272832600
+        },
+        {
+          "side": "client",
+          "at_ns": 116155022407800,
+          "event": "attempt_started",
+          "attempt": 1,
+          "id": "89b4adef3fbffdefd342db86e3aa3e3b",
+          "since_detection_ns": null,
+          "operation": "heartbeat"
+        },
+        {
+          "side": "client",
+          "at_ns": 116155023939600,
+          "event": "pong",
+          "attempt": 1,
+          "id": "89b4adef3fbffdefd342db86e3aa3e3b",
+          "since_detection_ns": null
+        },
+        {
+          "side": "client",
+          "at_ns": 116155023981400,
+          "event": "attempt_started",
+          "attempt": 1,
+          "id": "04dc449a606cbb701860fdd547151fa9",
+          "since_detection_ns": null,
+          "operation": "message"
+        },
+        {
+          "side": "server",
+          "at_ns": 116155042604500,
+          "event": "committed",
+          "id": "04dc449a606cbb701860fdd547151fa9"
+        },
+        {
+          "side": "client",
+          "at_ns": 116155043489900,
+          "event": "delivered",
+          "attempt": 1,
+          "id": "04dc449a606cbb701860fdd547151fa9",
+          "since_detection_ns": null
+        },
+        {
+          "side": "client",
+          "at_ns": 116155043534400,
+          "event": "attempt_started",
+          "attempt": 1,
+          "id": "27df4f5edcdfdeb3bbc658e81f30065d",
+          "since_detection_ns": null,
+          "operation": "heartbeat"
+        },
+        {
+          "side": "client",
+          "at_ns": 116155045058900,
+          "event": "pong",
+          "attempt": 1,
+          "id": "27df4f5edcdfdeb3bbc658e81f30065d",
+          "since_detection_ns": null
+        },
+        {
+          "side": "server",
+          "at_ns": 116155045636000,
+          "event": "closed",
+          "error": "EOFError"
+        }
+      ],
+      "acknowledged": 3,
+      "inbox_rows": 3,
+      "duplicates": 1,
+      "planned_messages": 3,
+      "delivery_ratio": 1.0,
+      "tcp_recovery_ns": 41513500,
+      "secure_recovery_ns": 270238700,
+      "delivery_recovery_ns": 272832600,
+      "confirmed_connection_tcp_ns": 266167100,
+      "receipts_during_outage": 0,
+      "receipts_after_outage": 2,
+      "attempts": 9,
+      "timeouts": 0,
+      "timeout_rate": 0.0,
+      "interruptions": 3
+    }
+  ]
+}
