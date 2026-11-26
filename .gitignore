@@ -1,0 +1,40 @@
+# Python dan virtual environment
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Credential dan material kunci lokal
+.env
+.env.*
+!.env.example
+.aws/
+.ssh/
+secrets/
+credentials/
+credentials.json
+psk.bin
+psk.hex
+psk.txt
+*.psk
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Bukti lab mentah yang dapat memuat metadata endpoint atau data sensitif
+captures/
+private-data/
+*.pcap
+*.pcapng
+*.cap
+*.log
