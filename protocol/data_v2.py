@@ -63,6 +63,11 @@ class DataChannel:
             self._session.close()
             raise
 
+    @property
+    def session_id(self) -> bytes:
+        """Public identifier of the confirmed handshake on this connection."""
+        return self._session.session_id
+
     def _write(self, kind: int, plaintext: bytes) -> None:
         """Called with the send lock held, also when replying from receive()."""
         cipher = self._tx

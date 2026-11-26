@@ -28,6 +28,10 @@ class HandshakeTimeout(HandshakeError):
     """The deadline for completing the whole handshake expired."""
 
 
+class HandshakeTransportError(HandshakeError):
+    """The stream closed or failed before the handshake completed."""
+
+
 class Message(IntEnum):
     CLIENT_HELLO = 1
     SERVER_HELLO = 2
@@ -71,7 +75,7 @@ class _Exchange:
             self.sock.settimeout(self.remaining())
             chunk = self.sock.recv(size - len(data))
             if not chunk:
-                raise HandshakeError("Incomplete handshake")
+                raise HandshakeTransportError("Incomplete handshake")
             data.extend(chunk)
         return bytes(data)
 
@@ -211,7 +215,9 @@ def establish(sock: socket.socket, *, role: str, psk: bytes,
             sock.settimeout(previous_timeout)
         except socket.timeout:
             raise HandshakeTimeout("Handshake timed out") from None
-        except (OSError, ValueError):
+        except OSError:
+            raise HandshakeTransportError("Handshake transport failed") from None
+        except ValueError:
             raise HandshakeError("Handshake failed") from None
         session = ConfirmedSession(sock, role_id, session_id, exchange.transcript.digest(), keys,
                                    exchange.suite.wire_id)
