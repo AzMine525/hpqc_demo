@@ -10,7 +10,8 @@ from typing import Optional, Union
 from cryptography.exceptions import InvalidTag
 
 from crypto_engine.v2.aead import DirectionCipher, DirectionContext
-from protocol.handshake_v2 import DEFAULT_TIMEOUT, SUITE, VERSION, establish
+from crypto_engine.v2.suites import DEFAULT_SUITE
+from protocol.handshake_v2 import DEFAULT_TIMEOUT, VERSION, establish
 from protocol.transport import recv_exact
 
 DATA = 0x10
@@ -41,13 +42,13 @@ class DataChannel:
     """Own a connected socket, its handshake, and one cipher per direction."""
 
     def __init__(self, sock: socket.socket, *, role: str, psk: bytes,
-                 timeout: float = DEFAULT_TIMEOUT) -> None:
+                 timeout: float = DEFAULT_TIMEOUT, suite: str = DEFAULT_SUITE) -> None:
         self._sock = sock
-        self._session = establish(sock, role=role, psk=psk, timeout=timeout)
+        self._session = establish(sock, role=role, psk=psk, timeout=timeout, suite=suite)
         try:
             session = self._session
-            self._out = DirectionContext(VERSION, SUITE, session.session_id, session.role)
-            self._in = DirectionContext(VERSION, SUITE, session.session_id, 1 - session.role)
+            self._out = DirectionContext(VERSION, session.suite_id, session.session_id, session.role)
+            self._in = DirectionContext(VERSION, session.suite_id, session.session_id, 1 - session.role)
             self._tx: Optional[DirectionCipher] = DirectionCipher(session.traffic_keys.send, self._out)
             self._rx: Optional[DirectionCipher] = DirectionCipher(session.traffic_keys.receive, self._in)
             self._send_sequence = 0
@@ -104,7 +105,7 @@ class DataChannel:
         header = recv_exact(self._sock, HEADER.size)
         version, kind, suite, session_id, direction, seq, nonce, size = HEADER.unpack(header)
         if (version, suite, session_id, direction, seq) != (
-            VERSION, SUITE, self._in.session_id, self._in.direction, self._receive_sequence
+            VERSION, self._in.suite, self._in.session_id, self._in.direction, self._receive_sequence
         ):
             raise RecordError("Unexpected record context or sequence")
         if size + HEADER.size + TAG_SIZE != body_size:

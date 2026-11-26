@@ -4,7 +4,7 @@ Dua endpoint lab menggunakan PSK acak 32 byte yang telah dibagikan melalui kanal
 
 ## Urutan dan isi pesan
 
-Client selalu memulai. Versi adalah 2 dan suite 1 menunjuk ML-KEM-768, HKDF-SHA256, dan AES-256-GCM. Setiap frame berbentuk `uint32_be(panjang body) || versi || tipe || suite || role || payload`. Empat field sesudah prefix masing-masing satu byte. Role client adalah 0 dan server 1. Semua ukuran pada tabel adalah byte.
+Client selalu memulai. Tabel berikut mendeskripsikan suite default ID 1 (ML-KEM-768, HKDF-SHA256, AES-256-GCM). Setiap frame berbentuk `uint32_be(panjang body) || versi || tipe || suite || role || payload`. Empat field sesudah prefix masing-masing satu byte. Role client adalah 0 dan server 1. Semua ukuran pada tabel adalah byte. Ukuran SERVER_HELLO dan CLIENT_KEM untuk suite lain tercantum pada [spesifikasi Stage 07](crypto_agility.md).
 
 | Tipe dan pengirim | Isi payload, sesuai urutan wire | Panjang body | Tindakan penerima |
 |---|---|---:|---|
@@ -31,7 +31,7 @@ ML-KEM dapat menghasilkan dua secret berbeda ketika ciphertext sepanjang 1088 by
 
 ## API sesi dan timeout
 
-`protocol.handshake_v2.establish(sock, *, role, psk, timeout=10.0)` mengambil kepemilikan satu socket yang sudah terhubung. Caller memakai role `"client"` atau `"server"`, PSK bertipe bytes, dan timeout positif dalam detik. Sediakan socket eksklusif selama handshake.
+`protocol.handshake_v2.establish(sock, *, role, psk, timeout=10.0, suite="ml-kem-768")` mengambil kepemilikan satu socket yang sudah terhubung. Caller memakai role `"client"` atau `"server"`, PSK bertipe bytes, dan timeout positif dalam detik. Sediakan socket eksklusif selama handshake. Pada sukses, `ConfirmedSession.suite_id` memuat ID wire untuk pembentukan konteks DATA/ACK.
 
 - Satu deadline monotonic berlaku untuk kelima pesan. Sebelum setiap pembacaan parsial dan pengiriman, socket memakai sisa waktu. Deadline diperiksa kembali sebelum sesi diberikan. Batas ini mencakup waktu komputasi lokal dalam keputusan akhir. Panggilan native KEM yang sedang berjalan selesai dahulu. Waktu menunggu `accept()` dan membuat koneksi TCP berada di luar handshake.
 - Pada sukses, timeout socket sebelumnya dipulihkan. Hasil `ConfirmedSession` berisi role numerik, session ID, hash transcript akhir, dan `traffic_keys.send/receive` sesuai arah lokal. PSK dan kunci konfirmasi tidak menjadi field sesi. Gunakan `with establish(...) as session` atau panggil `close()` saat selesai. Penutupan bersifat idempoten, menutup socket dan melepas referensi kunci milik sesi. Python tidak menjamin zeroization atau pencabutan salinan yang telah diambil caller.

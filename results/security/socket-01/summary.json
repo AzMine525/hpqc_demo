@@ -1,0 +1,88 @@
+{
+  "time_utc": "2026-11-26T08:50:08.118418+00:00",
+  "python": "3.11.9",
+  "pqcrypto": "1.0.0",
+  "cryptography": "49.0.0",
+  "commit": "f181af3aff2b8c0a1412b43c72dec9e67d652183",
+  "runner_sha256": "afeca179f000517b16f7a9f88094a8ad9cbfeaea834328b99db70079a5417757",
+  "plaintext": {
+    "ports": [
+      52642,
+      52641
+    ],
+    "client": {
+      "bytes": 1028,
+      "sha256": "1e467ef5fd8286904c6f0931bcc85b37dc4da3b9adfeeaf6c91229695f60f964",
+      "marker_counts": [
+        1,
+        0
+      ],
+      "body_lengths": [
+        1024
+      ],
+      "types": []
+    },
+    "server": {
+      "bytes": 1028,
+      "sha256": "fdcbb8c99d1010c3b5d8cff1939480e192a594a081624b31cf617c48ed175610",
+      "marker_counts": [
+        0,
+        1
+      ],
+      "body_lengths": [
+        1024
+      ],
+      "types": []
+    },
+    "delivery": "PASS"
+  },
+  "secure": {
+    "ports": [
+      52644,
+      52643
+    ],
+    "client": {
+      "bytes": 2392,
+      "sha256": "d1896a79ec32d40798328233fb256a4ff07df1fd6fa3a1365c7840914933d9f6",
+      "marker_counts": [
+        0,
+        0
+      ],
+      "body_lengths": [
+        36,
+        1124,
+        36,
+        1100,
+        76
+      ],
+      "types": [
+        1,
+        3,
+        4,
+        16,
+        17
+      ]
+    },
+    "server": {
+      "bytes": 2496,
+      "sha256": "fd34f547b63344636d1ba4a9aba6ffd98c4325221dd98b16937f1be37ec74c88",
+      "marker_counts": [
+        0,
+        0
+      ],
+      "body_lengths": [
+        1268,
+        36,
+        76,
+        1100
+      ],
+      "types": [
+        2,
+        5,
+        17,
+        16
+      ]
+    },
+    "delivery": "PASS"
+  }
+}

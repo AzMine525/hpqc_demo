@@ -42,7 +42,7 @@ def main() -> None:
         if len(payload) > MAX_DATA:
             parser.error("Payload exceeds 1 MiB")
         sock, psk = endpoint(args, parser)
-        with DataChannel(sock, role=args.role, psk=psk, timeout=args.timeout) as channel:
+        with DataChannel(sock, role=args.role, psk=psk, timeout=args.timeout, suite=args.suite) as channel:
             if args.role == "client":
                 _send(channel, payload)
                 _receive(channel, args.output)

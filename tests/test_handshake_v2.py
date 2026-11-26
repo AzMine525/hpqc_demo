@@ -16,6 +16,7 @@ import unittest
 from unittest.mock import Mock, patch
 
 from crypto_engine.v2.kdf import derive_keys
+from crypto_engine.v2.kem import ML_KEM_768
 from protocol import handshake_v2 as hs
 
 
@@ -57,7 +58,7 @@ class HandshakeTests(unittest.TestCase):
         frames = []
         secrets_for_check = []
         original_write = hs._Exchange._write
-        original_encapsulate = hs.kem.encapsulate
+        original_encapsulate = ML_KEM_768.encapsulate
 
         def record(exchange, kind, payload):
             frames.append((kind, payload))
@@ -68,7 +69,7 @@ class HandshakeTests(unittest.TestCase):
             secrets_for_check.append(secret)
             return ciphertext, secret
 
-        with patch.object(hs._Exchange, "_write", record), patch.object(hs.kem, "encapsulate", encapsulate):
+        with patch.object(hs._Exchange, "_write", record), patch.object(ML_KEM_768, "encapsulate", encapsulate):
             client, server = self.exchange()
         self.assertEqual([int(kind) for kind, _ in frames], [1, 2, 3, 4, 5])
         self.assertEqual([len(p) for _, p in frames], [32, 1264, 1120, 32, 32])
@@ -116,7 +117,7 @@ class HandshakeTests(unittest.TestCase):
         self.rejected(self.exchange(client_psk=secrets.token_bytes(32)))
 
     def test_implicit_rejection_detected_at_client_finished(self):
-        original_decapsulate = hs.kem.decapsulate
+        original_decapsulate = ML_KEM_768.decapsulate
 
         def different_secret(private, ciphertext):
             # Keep wire bytes and both PSK proofs valid. Feed ML-KEM a different
@@ -124,7 +125,7 @@ class HandshakeTests(unittest.TestCase):
             changed = bytes([ciphertext[0] ^ 1]) + ciphertext[1:]
             return original_decapsulate(private, changed)
 
-        with patch.object(hs.kem, "decapsulate", side_effect=different_secret) as decap:
+        with patch.object(ML_KEM_768, "decapsulate", side_effect=different_secret) as decap:
             client, server = self.exchange()
         self.assertEqual(decap.call_count, 1)
         self.rejected((client, server))
@@ -168,7 +169,7 @@ class HandshakeTests(unittest.TestCase):
         # Supply a buffered fixture for the client's expected second frame.
         sock = Mock(spec=socket.socket)
         sock.recv.side_effect = [struct.pack("!I", 1268), bytes([2, 2, 7, 1])]
-        with patch.object(hs.kem, "encapsulate") as encapsulate:
+        with patch.object(ML_KEM_768, "encapsulate") as encapsulate:
             with self.assertRaisesRegex(hs.HandshakeError, "header"):
                 hs.establish(sock, role="client", psk=self.psk)
         self.assertEqual(encapsulate.call_count, 0)
@@ -183,7 +184,7 @@ class HandshakeTests(unittest.TestCase):
             original_write(exchange, kind, payload)
 
         with patch.object(hs._Exchange, "_write", wrong_client_proof), \
-                patch.object(hs.kem, "decapsulate") as decapsulate:
+                patch.object(ML_KEM_768, "decapsulate") as decapsulate:
             self.rejected(self.exchange())
         self.assertEqual(decapsulate.call_count, 0)
 
