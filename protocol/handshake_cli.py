@@ -6,6 +6,7 @@ from pathlib import Path
 import socket
 
 from config import CONNECT_TIMEOUT, DEFAULT_PORT
+from crypto_engine.v2.suites import DEFAULT_SUITE, SUITES
 from protocol.handshake_v2 import DEFAULT_TIMEOUT, HandshakeError, establish
 
 
@@ -16,6 +17,8 @@ def endpoint_parser(description: str) -> argparse.ArgumentParser:
     parser.add_argument("--port", type=int, default=DEFAULT_PORT)
     parser.add_argument("--psk-file", required=True, type=Path)
     parser.add_argument("--timeout", type=float, default=DEFAULT_TIMEOUT)
+    parser.add_argument("--suite", choices=tuple(SUITES), default=DEFAULT_SUITE,
+                        help="Local suite required of the peer (default: %(default)s)")
     return parser
 
 
@@ -43,7 +46,7 @@ def main() -> None:
     args = parser.parse_args()
     try:
         sock, psk = endpoint(args, parser)
-        with establish(sock, role=args.role, psk=psk, timeout=args.timeout) as session:
+        with establish(sock, role=args.role, psk=psk, timeout=args.timeout, suite=args.suite) as session:
             print(f"Handshake terkonfirmasi. Session ID {session.session_id.hex()}")
     except (HandshakeError, OSError, ValueError) as exc:
         parser.exit(1, f"Handshake gagal ({type(exc).__name__}).\n")

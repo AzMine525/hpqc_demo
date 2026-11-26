@@ -1,5 +1,47 @@
 # Log pengembangan dan verifikasi HPQC
 
+## 26 November 2026 — Stage 07, crypto-agility
+
+**Checkpoint sebelum implementasi.** Pada `main` di `f181af3aff2b8c0a1412b43c72dec9e67d652183`, pemeriksaan `git status`, `git diff`, file baru dan source menemukan pekerjaan Stage 06 di working tree serta konstanta suite 1 di protokol. Proses sebelumnya berhenti sesudah preflight dan probe API, sebelum implementasi Stage 07 atau koreksi dokumentasi. ZIP baseline cocok dengan hash tercatat. Lima tes bukti Stage 06 lulus saat preflight. Transkrip 63 tes, tiga file alat/tes dan kedua PCAP tersedia. `Get-FileHash` mengonfirmasi hash PCAP dan hash asli transkrip. Dua digit yang terlewat saat menyalin hash transkrip diperbaiki di [laporan Stage 06](docs/security_testing.md).
+
+Probe Windows memakai CPython 3.11.9, pqcrypto 1.0.0 dan cryptography 49.0.0. Ketiga modul ML-KEM menyediakan `keygen()`, `encaps(pk_bytes)`, `decaps(sk_bytes, ct_bytes)`. Ukuran public/private/ciphertext/secret terukur 800/1632/768/32, 1184/2400/1088/32 dan 1568/3168/1568/32 byte. Probe RSA-2048 OAEP-SHA256 menghasilkan public key DER-SPKI 294 byte, ciphertext 256 byte, dan dekripsi secret acak 32 byte yang cocok. Akses dokumentasi web mengembalikan HTTP 401. Seluruh backend dapat dipakai lokal.
+
+**Status akhir. Seluruh kriteria penerimaan Stage 07 lulus di Windows lokal.** Default ID 1 melayani endpoint ML-KEM-768 terdahulu. ID baru 2/3/4 mewakili ML-KEM-512, ML-KEM-1024 dan RSA-2048-OAEP. Pilihan suite ditetapkan di setiap endpoint. Eksperimen memakai akun dan dependency Windows yang sudah tersedia, dengan direktori temporer proses tes di `__pycache__` dalam workspace. [Kontrak API, ukuran frame dan prosedur CLI](docs/crypto_agility.md)
+
+| Command atau pemeriksaan aktual | Hasil Windows |
+|---|---|
+| `python -B -m protocol.handshake_cli --help` dan `python -B -m protocol.transfer_cli --help` | Keduanya exit 0 dan menampilkan keempat pilihan serta default ML-KEM-768. |
+| `python -B -m unittest discover -s tests -p test_agility.py -v` saat integrasi | Versi awal 5/5 PASS. Pemeriksaan PSK salah untuk seluruh suite ditambahkan sesudahnya dan lulus dalam regresi final. |
+| `python -B -m unittest discover -s tests -v` setelah implementasi | **69/69 PASS**, tanpa skip, dalam 9,097 detik. Mencakup 6 tes Stage 07 dengan subtes per suite. Empat backend menghasilkan secret cocok 32 byte. Keempat suite lulus verifikasi ukuran wire, konteks HKDF, DATA/ACK dua arah dan penolakan replay serta PSK salah. Dua belas mismatch terurut menutup kedua socket sebelum keygen, dengan satu CLIENT_HELLO dan nol frame balasan. CLI mentransfer file 1 MiB serta balasan UTF-8 per suite. [Transkrip lengkap](results/stage07/test-results.txt) |
+| `git archive --format=zip f181af3aff2b8c0a1412b43c72dec9e67d652183 config.py protocol crypto_engine`, lalu `python -B -` dengan dua proses `python -B -m protocol.transfer_cli` | PASS 3/3 skenario TCP loopback. Source acuan dibaca ke direktori temporer di workspace. Client baru dengan pilihan eksplisit ID 1 ke server acuan dan client acuan ke server baru default menghasilkan exit 0 pada kedua peran, isi file cocok dua arah serta ACK terverifikasi. Client baru ML-KEM-512 ke server baru RSA menghasilkan exit 1 pada kedua peran dan kedua file tujuan tidak terbentuk. |
+| `python -B smoke_test.py` | Exit 0, agreement ML-KEM dan dekripsi AES-256-GCM berhasil. |
+| `python -B -` dengan `compile` dan `hashlib` | Sintaks sembilan file implementasi dan tes Stage 07 lulus. Sesudah koreksi dokumentasi, keenam hash pada tabel bukti Stage 06 cocok dengan file aslinya. Kedua PCAP serta transkrip lama tetap berada di lokasi semula. |
+
+Identitas revisi kerja Stage 07 adalah SHA-256 `09f276616a9cbcca60f17e9fd079143205b930c4132e4eca5e385ec49436f447` atas konkatenasi digest SHA-256 biner sembilan file dalam urutan berikut: `crypto_engine/v2/kem.py`, `crypto_engine/v2/suites.py`, `protocol/data_v2.py`, `protocol/handshake_cli.py`, `protocol/handshake_v2.py`, `protocol/transfer_cli.py`, `tests/test_agility.py`, `tests/test_data_v2.py`, `tests/test_handshake_v2.py`. SHA-256 transkrip Stage 07 adalah `0ad4ba8a8f34d78def71760b564787d522e78b2b71c84b234e4389d93c52f81c`.
+
+Ubuntu dan Debian **NOT RUN**. Untuk skripsi, data ini membuktikan agreement dan delivery bagi empat pilihan pada host pengujian. Pengukuran komparatif performa berada di Stage 08 dan menunggu validasi pengguna.
+
+## 26 November 2026 — Stage 06, pengujian keamanan
+
+**Seluruh kriteria Stage 06 lulus pada Windows loopback.** Git berada pada `main` di `f181af3aff2b8c0a1412b43c72dec9e67d652183`. Preflight baca-saja menemukan working tree bersih. Hash gabungan empat file Stage 05 cocok dengan `36a684a4614d1720359bb5e292aec984130040ec8262bcf4bfa6c6bf0e5443af`. SHA-256 ZIP prototipe cocok dengan `4c96cd9f4462b5b1a1f1350c4b1fd4ea572c80343f76997b41625e19b381a981`. Sebanyak 12 tes Stage 05 yang tidak membuat file lulus sebelum pengeditan. Tes CLI dengan file temporer sudah memiliki bukti PASS pada entri Stage 05 dan lulus kembali dalam suite lengkap di bawah.
+
+Pengujian memakai CPython 3.11.9, pqcrypto 1.0.0, cryptography 49.0.0, dan dependency yang telah tersedia dari Stage 02. `python` pada tabel merujuk ke executable 3.11.9 di inventaris Windows. File temporer suite ditempatkan di cache workspace. Uji negatif memakai fixture lokal. PCAP merekam dua koneksi positif yang hanya memakai data sintetis dan port milik runner. [Metode, perintah per platform, hash dan matriks penerimaan](docs/security_testing.md)
+
+| Command atau pemeriksaan aktual | Hasil |
+|---|---|
+| `git status`, hash file/arsip dan `python -B -` dengan `unittest.TestSuite` atas `DataTests` selain tes CLI temporer | PASS 12/12 pada preflight. Pemeriksaan mencakup delivery dua arah hingga 1 MiB, bentuk wire, ACK, serta penolakan perubahan dan replay. |
+| Probe command capture dan driver, `sc.exe query npcap`, `sc.exe query npf`, `pktmon status` | dumpcap, tshark dan tcpdump tidak ditemukan pada host. Kedua kueri driver mengembalikan error 1060. Kueri status PktMon dari sandbox mendapat Access denied; pemeriksaan berizin melaporkan Packet Monitor tidak berjalan. Capture menggunakan socket IPv4 loopback Windows. |
+| `python -B -m experiments.security_baseline --windows-capture --output results/security/capture-01` | PASS. Pukul 15.49 WIB, plaintext 9 paket (file 2.608 byte), HPQC 25 paket (file 6.336 byte). Keempat stream arah cocok byte demi byte dengan data endpoint. Kedua payload 1 KiB tiba pada kedua mode. Kedua ACK HPQC cocok dengan ID pengirim. [Manifest capture](results/security/capture-01/summary.json) |
+| `python -B -m experiments.security_baseline --output results/security/socket-01` | PASS. Pengulangan tanpa akses capture memeriksa framing, delivery, ACK dan marker. [Manifest endpoint](results/security/socket-01/summary.json) |
+| `python -B smoke_test.py` | PASS. Agreement ML-KEM dan dekripsi AES-GCM berhasil. |
+| `python -B -m unittest discover -s tests -p test_security_evidence.py -v` | PASS 5/5. DATA lama setelah tiga delivery, tag ACK rusak, payload kontrol identik dan dua tes integritas reassembly. |
+| `python -B -m unittest discover -s tests -v` | PASS 63/63 dalam 3,812 detik, tanpa skip. Mencakup engine, handshake, transfer, interoperabilitas chat dan bukti Stage 06. [Transkrip lengkap](results/security/test-results.txt) |
+| `python -B -` dengan `compile`, `struct`, `hashlib` dan reassembly; `git diff --exit-code HEAD -- chat.py client.py server.py protocol crypto_engine requirements.txt` | PASS. Tiga file Python baru lolos sintaks. Kedua PCAP memiliki header versi 2.4, LINKTYPE_RAW, panjang paket lengkap. Keempat panjang, hash dan hitungan marker stream cocok dengan manifest. Diff aplikasi kosong. |
+
+Keputusan penelitian menggunakan kontrol dengan satu frame per arah dan payload identik agar keterlihatan marker dapat dibandingkan. Pada stream plaintext marker pengirim muncul sekali per arah. Pada HPQC kedua marker muncul nol kali dalam 4.888 byte stream gabungan. Kasus stale mempertahankan sequence penerima di 3 dan jumlah ACK di 3. Kasus tag ACK rusak mempertahankan status pengiriman belum terkonfirmasi. Keduanya menutup sesi.
+
+Ubuntu dan Debian **NOT RUN**. PCAP mentah diabaikan Git dan tersedia di workspace ini. Analisis Wireshark manual belum dijalankan. Hasil hanya berlaku untuk skenario lokal dan data sintetis yang tercantum. Stage 07 menunggu validasi pengguna.
+
 ## 26 November 2026 — Stage 05, secure data transmission
 
 **Status: acceptance criteria Stage 05 lulus pada Windows lokal.** Pada preflight baca-saja, hash tiga file Stage 04 cocok dengan `adeae3f5…63f5cf`, dan SHA-256 ZIP baseline cocok dengan log. Dari suite Stage 04, 12 tes berbasis socket lokal dijalankan dengan `python -B -` dan `unittest.TestSuite` sebelum source diedit (12 PASS). Tes CLI ke-13 membuat PSK temporer, sehingga diuji ulang bersama regresi lengkap setelah preflight. Log Stage 04 sebelumnya mencatat 13/13 PASS.

@@ -1,5 +1,9 @@
 # HPQC two-way chat demo
 
+**Stage 07** menyediakan `--suite` pada CLI handshake dan transfer v2. Pilih satu suite yang sama di kedua endpoint. Default `ml-kem-768` memakai ID 1 dan kompatibel dengan endpoint v2 Stage 06. [Pilihan suite, format wire, perintah dan bukti pengujian](docs/crypto_agility.md)
+
+**Stage 06** menguji penolakan tampering dan replay, lalu membandingkan pengiriman payload yang sama pada kontrol plaintext dan HPQC v2 melalui TCP loopback. Perintah reproduksi, matriks penerimaan, dua packet capture, dan transkrip regresi tersedia di [laporan pengujian keamanan](docs/security_testing.md).
+
 **Stage 05** mengirim teks UTF-8 atau file biner hingga 1 MiB melalui sesi v2. Kedua arah menggunakan AES-256-GCM dan application ACK yang mencocokkan message ID. Jalankan `python -B -m protocol.transfer_cli --help` untuk opsi. [Panduan transfer, format wire, dan uji dua terminal](docs/secure_data.md)
 
 Stage 04 menyediakan CLI handshake dua arah dengan PSK dan konfirmasi kunci. Panduan pembuatan PSK, perintah client/server, dan format lima pesan ada di [spesifikasi handshake v2](docs/secure_handshake.md).

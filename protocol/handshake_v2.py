@@ -11,11 +11,11 @@ from dataclasses import dataclass
 from enum import IntEnum
 from typing import Optional
 
-from crypto_engine.v2 import kem
 from crypto_engine.v2.kdf import SessionKeys, derive_keys
+from crypto_engine.v2.suites import DEFAULT_SUITE, SUITES, Suite
 
 VERSION = 2
-SUITE = 1
+SUITE = SUITES[DEFAULT_SUITE].wire_id
 CLIENT, SERVER = 0, 1
 DEFAULT_TIMEOUT = 10.0
 
@@ -36,32 +36,28 @@ class Message(IntEnum):
     SERVER_FINISHED = 5
 
 
-# Sender and exact wire payload size (excluding the four-byte header).
-_LAYOUT = {
-    Message.CLIENT_HELLO: (CLIENT, 32),
-    Message.SERVER_HELLO: (SERVER, 32 + 16 + 1184 + 32),
-    Message.CLIENT_KEM: (CLIENT, 1088 + 32),
-    Message.CLIENT_FINISHED: (CLIENT, 32),
-    Message.SERVER_FINISHED: (SERVER, 32),
-}
-
-
-def _header(kind: Message) -> bytes:
-    return bytes((VERSION, kind, SUITE, _LAYOUT[kind][0]))
-
-
-def _frame(kind: Message, payload: bytes) -> bytes:
-    body = _header(kind) + payload
-    return struct.pack("!I", len(body)) + body
-
-
 class _Exchange:
     """Ordered wire transcript and a single monotonic deadline."""
 
-    def __init__(self, sock: socket.socket, timeout: float):
+    def __init__(self, sock: socket.socket, timeout: float, suite: Suite):
         self.sock = sock
+        self.suite = suite
+        self.layout = {
+            Message.CLIENT_HELLO: (CLIENT, 32),
+            Message.SERVER_HELLO: (SERVER, 32 + 16 + suite.engine.public_size + 32),
+            Message.CLIENT_KEM: (CLIENT, suite.engine.ciphertext_size + 32),
+            Message.CLIENT_FINISHED: (CLIENT, 32),
+            Message.SERVER_FINISHED: (SERVER, 32),
+        }
         self.deadline = time.monotonic() + timeout
         self.transcript = hashlib.sha256(b"HPQC/v2/handshake\x00")
+
+    def _header(self, kind: Message) -> bytes:
+        return bytes((VERSION, kind, self.suite.wire_id, self.layout[kind][0]))
+
+    def _frame(self, kind: Message, payload: bytes) -> bytes:
+        body = self._header(kind) + payload
+        return struct.pack("!I", len(body)) + body
 
     def remaining(self) -> float:
         remaining = self.deadline - time.monotonic()
@@ -80,16 +76,16 @@ class _Exchange:
         return bytes(data)
 
     def _write(self, kind: Message, payload: bytes) -> None:
-        frame = _frame(kind, payload)
+        frame = self._frame(kind, payload)
         self.sock.settimeout(self.remaining())
         self.sock.sendall(frame)
         self.transcript.update(frame)
 
     def _receive(self, kind: Message) -> bytes:
         length, = struct.unpack("!I", self._read(4))
-        if length != 4 + _LAYOUT[kind][1]:
+        if length != 4 + self.layout[kind][1]:
             raise HandshakeError("Unexpected handshake length")
-        if self._read(4) != _header(kind):
+        if self._read(4) != self._header(kind):
             raise HandshakeError("Unexpected handshake header")
         return self._read(length - 4)
 
@@ -98,14 +94,14 @@ class _Exchange:
 
     def receive_hello(self) -> bytes:
         random = self._receive(Message.CLIENT_HELLO)
-        self.transcript.update(_frame(Message.CLIENT_HELLO, random))
+        self.transcript.update(self._frame(Message.CLIENT_HELLO, random))
         return random
 
     def _proof(self, kind: Message, content: bytes, key: bytes) -> bytes:
         # The virtual frame omits the proof being calculated. Its typed header
         # separates sender, message purpose, version and suite.
         digest = self.transcript.copy()
-        digest.update(_frame(kind, content))
+        digest.update(self._frame(kind, content))
         return hmac.digest(key, b"HPQC/v2/proof\x00" + digest.digest(), "sha256")
 
     def send_proven(self, kind: Message, content: bytes, key: bytes) -> None:
@@ -116,7 +112,7 @@ class _Exchange:
         content, proof = payload[:-32], payload[-32:]
         if not hmac.compare_digest(self._proof(kind, content, key), proof):
             raise HandshakeError("Handshake proof rejected")
-        self.transcript.update(_frame(kind, payload))
+        self.transcript.update(self._frame(kind, payload))
         return content
 
 
@@ -130,9 +126,10 @@ class ConfirmedSession:
     """Own the connected socket and traffic keys until close or context exit."""
 
     def __init__(self, sock: socket.socket, role: int, session_id: bytes,
-                 transcript_hash: bytes, traffic_keys: TrafficKeys):
+                 transcript_hash: bytes, traffic_keys: TrafficKeys, suite_id: int = SUITE):
         self._sock = sock
         self.role = role
+        self.suite_id = suite_id
         self.session_id = session_id
         self.transcript_hash = transcript_hash
         self._keys: Optional[TrafficKeys] = traffic_keys
@@ -159,7 +156,7 @@ class ConfirmedSession:
 def _keys(exchange: _Exchange, secret: bytes, client_random: bytes,
           server_random: bytes) -> SessionKeys:
     return derive_keys(secret, client_random=client_random, server_random=server_random,
-                       version=VERSION, suite=SUITE, transcript_hash=exchange.transcript.digest())
+                       version=VERSION, suite=exchange.suite.wire_id, transcript_hash=exchange.transcript.digest())
 
 
 def _client(exchange: _Exchange, psk: bytes) -> tuple[bytes, TrafficKeys]:
@@ -167,7 +164,7 @@ def _client(exchange: _Exchange, psk: bytes) -> tuple[bytes, TrafficKeys]:
     exchange.send_hello(client_random)
     hello = exchange.receive_proven(Message.SERVER_HELLO, psk)
     server_random, session_id, public = hello[:32], hello[32:48], hello[48:]
-    ciphertext, secret = kem.encapsulate(public)
+    ciphertext, secret = exchange.suite.engine.encapsulate(public)
     exchange.send_proven(Message.CLIENT_KEM, ciphertext, psk)
     keys = _keys(exchange, secret, client_random, server_random)
     exchange.send_proven(Message.CLIENT_FINISHED, b"", keys.confirm_client)
@@ -178,10 +175,10 @@ def _client(exchange: _Exchange, psk: bytes) -> tuple[bytes, TrafficKeys]:
 def _server(exchange: _Exchange, psk: bytes) -> tuple[bytes, TrafficKeys]:
     client_random = exchange.receive_hello()
     server_random, session_id = secrets.token_bytes(32), secrets.token_bytes(16)
-    public, private = kem.generate_keypair()
+    public, private = exchange.suite.engine.generate_keypair()
     exchange.send_proven(Message.SERVER_HELLO, server_random + session_id + public, psk)
     ciphertext = exchange.receive_proven(Message.CLIENT_KEM, psk)
-    secret = kem.decapsulate(private, ciphertext)
+    secret = exchange.suite.engine.decapsulate(private, ciphertext)
     keys = _keys(exchange, secret, client_random, server_random)
     exchange.receive_proven(Message.CLIENT_FINISHED, keys.confirm_client)
     exchange.send_proven(Message.SERVER_FINISHED, b"", keys.confirm_server)
@@ -189,7 +186,7 @@ def _server(exchange: _Exchange, psk: bytes) -> tuple[bytes, TrafficKeys]:
 
 
 def establish(sock: socket.socket, *, role: str, psk: bytes,
-              timeout: float = DEFAULT_TIMEOUT) -> ConfirmedSession:
+              timeout: float = DEFAULT_TIMEOUT, suite: str = DEFAULT_SUITE) -> ConfirmedSession:
     """Take ownership of a connected socket. Return a confirmed session or close it."""
     success = False
     try:
@@ -199,8 +196,10 @@ def establish(sock: socket.socket, *, role: str, psk: bytes,
             raise ValueError("Unknown handshake role")
         if type(timeout) not in (int, float) or not math.isfinite(timeout) or timeout <= 0:
             raise ValueError("Handshake timeout must be finite and positive")
+        if not isinstance(suite, str) or suite not in SUITES:
+            raise ValueError("Unknown key establishment suite")
         previous_timeout = sock.gettimeout()
-        exchange = _Exchange(sock, timeout)
+        exchange = _Exchange(sock, timeout, SUITES[suite])
         try:
             if role == "client":
                 session_id, keys = _client(exchange, psk)
@@ -214,7 +213,8 @@ def establish(sock: socket.socket, *, role: str, psk: bytes,
             raise HandshakeTimeout("Handshake timed out") from None
         except (OSError, ValueError):
             raise HandshakeError("Handshake failed") from None
-        session = ConfirmedSession(sock, role_id, session_id, exchange.transcript.digest(), keys)
+        session = ConfirmedSession(sock, role_id, session_id, exchange.transcript.digest(), keys,
+                                   exchange.suite.wire_id)
         success = True
         return session
     finally:

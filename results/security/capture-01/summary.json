@@ -1,0 +1,100 @@
+{
+  "time_utc": "2026-11-26T08:49:55.480516+00:00",
+  "python": "3.11.9",
+  "pqcrypto": "1.0.0",
+  "cryptography": "49.0.0",
+  "commit": "f181af3aff2b8c0a1412b43c72dec9e67d652183",
+  "runner_sha256": "afeca179f000517b16f7a9f88094a8ad9cbfeaea834328b99db70079a5417757",
+  "plaintext": {
+    "ports": [
+      53645,
+      53644
+    ],
+    "client": {
+      "bytes": 1028,
+      "sha256": "1e467ef5fd8286904c6f0931bcc85b37dc4da3b9adfeeaf6c91229695f60f964",
+      "marker_counts": [
+        1,
+        0
+      ],
+      "body_lengths": [
+        1024
+      ],
+      "types": []
+    },
+    "server": {
+      "bytes": 1028,
+      "sha256": "fdcbb8c99d1010c3b5d8cff1939480e192a594a081624b31cf617c48ed175610",
+      "marker_counts": [
+        0,
+        1
+      ],
+      "body_lengths": [
+        1024
+      ],
+      "types": []
+    },
+    "delivery": "PASS",
+    "capture": {
+      "file": "plaintext.pcap",
+      "sha256": "1ad1677f7099208fa06da84985cf2f6d9f68cb7a372f9fbf832925db0a4befc7",
+      "packets": 9,
+      "reassembly": "PASS"
+    }
+  },
+  "secure": {
+    "ports": [
+      53647,
+      53646
+    ],
+    "client": {
+      "bytes": 2392,
+      "sha256": "cd172afb423fe96fb5d800672ae886d5fb3f1d100fd074f7faf6153c2aad32ed",
+      "marker_counts": [
+        0,
+        0
+      ],
+      "body_lengths": [
+        36,
+        1124,
+        36,
+        1100,
+        76
+      ],
+      "types": [
+        1,
+        3,
+        4,
+        16,
+        17
+      ]
+    },
+    "server": {
+      "bytes": 2496,
+      "sha256": "bfbe648327dbf44ef279141471717a25bb307eba21c876673b1e6955a106ac3b",
+      "marker_counts": [
+        0,
+        0
+      ],
+      "body_lengths": [
+        1268,
+        36,
+        76,
+        1100
+      ],
+      "types": [
+        2,
+        5,
+        17,
+        16
+      ]
+    },
+    "delivery": "PASS",
+    "capture": {
+      "file": "secure.pcap",
+      "sha256": "9437d8d352d0d05da5042da11bc0a9ea6693c2852833872723203ed146420257",
+      "packets": 25,
+      "reassembly": "PASS"
+    }
+  }
+}

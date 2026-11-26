@@ -1,6 +1,6 @@
 # Kontrak Crypto Engine Stage 03
 
-Paket Python `crypto_engine.v2` menyediakan operasi lokal untuk satu suite ML-KEM-768/HKDF-SHA256/AES-256-GCM. Entry point chat menggunakan jalur Stage 02. Alur di bawah dapat dijalankan dalam memori melalui unit test.
+Kontrak Stage 03 di bawah mendeskripsikan suite default ML-KEM-768/HKDF-SHA256/AES-256-GCM. Stage 07 menggunakan key schedule dan AEAD yang sama untuk empat pilihan pembentukan secret. Entry point chat menggunakan jalur Stage 02. [Antarmuka dan parameter suite Stage 07](crypto_agility.md)
 
 ## Pembentukan secret — modul kem
 
@@ -18,7 +18,7 @@ Semua input biner API memakai `bytes`. Input dengan tipe atau panjang keliru men
 
 | Input | Kontrak |
 |---|---|
-| shared_secret | 32 byte hasil ML-KEM. |
+| shared_secret | 32 byte hasil pembentukan secret suite terpilih. |
 | client_random, server_random | Masing-masing 32 byte acak baru dari endpoint terkait. Urutan client lalu server tetap. |
 | version, suite | Integer unsigned 8 bit masing-masing. Caller menentukan nilai yang disepakati. |
 | transcript_hash | SHA-256 sepanjang 32 byte atas byte transcript kanonis yang sama di kedua endpoint. Penyusunan transcript menjadi tanggung jawab handshake pada tahap integrasi. |

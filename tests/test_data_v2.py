@@ -255,6 +255,11 @@ class DataTests(unittest.TestCase):
                 peer.result(timeout=3)
 
     def test_cli_text_and_file_after_real_handshake(self):
+        for suite in (None, "ml-kem-512", "ml-kem-1024", "rsa-2048-oaep"):
+            with self.subTest(suite=suite):
+                self.cli_text_and_file(suite)
+
+    def cli_text_and_file(self, suite):
         with TemporaryDirectory() as directory:
             root = Path(directory)
             key = root / "lab.psk"
@@ -263,6 +268,8 @@ class DataTests(unittest.TestCase):
             source.write_bytes(secrets.token_bytes(1 << 20))
             cli = [sys.executable, "-B", "-m", "protocol.transfer_cli"]
             options = ["--psk-file", str(key), "--host", "127.0.0.1"]
+            if suite is not None:
+                options += ["--suite", suite]
             server_args = ["server", "--port", "0", "--text", "Pesan café", "--output", str(root / "in.bin")]
             with ThreadPoolExecutor(1) as pool, subprocess.Popen(
                 cli + server_args + options, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True

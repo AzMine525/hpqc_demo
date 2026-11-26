@@ -10,7 +10,7 @@ Semua integer memakai network byte order. Prefix 4 byte menyatakan ukuran body, 
 |---:|---|---:|---|
 | 0 | version | 1 | 2 |
 | 1 | message type | 1 | DATA = 0x10, ACK = 0x11 |
-| 2 | suite | 1 | 1, sesuai handshake |
+| 2 | suite | 1 | ID suite pada sesi terkonfirmasi, default 1. [Daftar ID Stage 07](crypto_agility.md) |
 | 3 | session ID | 16 | Nilai publik dari handshake yang dikonfirmasi |
 | 19 | direction | 1 | 0 client ke server, 1 server ke client |
 | 20 | sequence | 8 | Mulai dari 0 untuk setiap arah. DATA dan ACK memakai urutan yang sama dalam arah tersebut. |
