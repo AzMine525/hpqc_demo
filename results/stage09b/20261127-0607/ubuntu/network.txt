@@ -1,0 +1,27 @@
+ubuntu-pqc
+research2
+2026-11-26T23:07:34+00:00
+7.0.0-44-generic
+Ubuntu 26.04.1 LTS
+lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP>
+enp0s3           UP             08:00:27:83:fd:fc <BROADCAST,MULTICAST,UP,LOWER_UP>
+enp0s8           UP             08:00:27:a3:fb:1a <BROADCAST,MULTICAST,UP,LOWER_UP>
+lo               UNKNOWN        127.0.0.1/8
+enp0s3           UP             10.10.20.5/24 metric 100
+10.10.20.1 dev enp0s3 src 10.10.20.5 uid 1000
+    cache
+10.10.20.1 dev enp0s3 src 10.10.20.5 uid 1000
+    cache
+10.10.30.20 via 10.10.20.1 dev enp0s3 src 10.10.20.5 uid 1000
+    cache
+tc utility, iproute2-6.19.0, libbpf 1.6.3
+fq_codel
+qdisc pfifo_fast 0: root refcnt 2 bands 3 priomap 1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+CONFIG_NET_SCH_NETEM=m
+/lib/modules/7.0.0-44-generic/kernel/net/sched/sch_netem.ko.zst
+ping: Warning: source address might be selected on device other than: enp0s8
+PING 10.10.30.20 (10.10.30.20) from 10.10.20.5 enp0s8: 56(84) bytes of data.
+
+--- 10.10.30.20 ping statistics ---
+4 packets transmitted, 0 received, 100% packet loss, time 3084ms
+

@@ -1,0 +1,5 @@
+2026-11-27T08:07:53+07:00
+10.10.20.1 dev enp0s3 src 10.10.20.4 uid 1000 
+qdisc netem 709: root refcnt 2 limit 1000 loss 10% seed 10541605486469320156
+ Sent 278 bytes 3 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0

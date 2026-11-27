@@ -1,0 +1,11 @@
+{"event": "attempt_started", "attempt": 1, "id": "f10a453515e86c50d49f46c423b7d4d2", "at_ns": 32882061909125, "since_detection_ns": null, "operation": "message"}
+{"event": "tcp_connected", "attempt": 1, "id": "f10a453515e86c50d49f46c423b7d4d2", "at_ns": 32882085519181, "since_detection_ns": null}
+{"event": "secure_ready", "attempt": 1, "id": "f10a453515e86c50d49f46c423b7d4d2", "at_ns": 32882143550414, "since_detection_ns": null, "session": "50e35bed144d902abd3f90c8aae09032"}
+{"event": "delivered", "attempt": 1, "id": "f10a453515e86c50d49f46c423b7d4d2", "at_ns": 32882202559190, "since_detection_ns": null}
+{"event": "attempt_started", "attempt": 1, "id": "d06591ff35c5ed799e8f853b65b230d4", "at_ns": 32885205152025, "since_detection_ns": null, "operation": "message"}
+{"event": "interrupted", "attempt": 1, "id": "d06591ff35c5ed799e8f853b65b230d4", "at_ns": 32885210286041, "since_detection_ns": 19594, "error": "EOFError"}
+{"event": "backoff", "attempt": 1, "id": "d06591ff35c5ed799e8f853b65b230d4", "at_ns": 32885210991599, "since_detection_ns": 725152, "seconds": 0.2}
+{"event": "attempt_started", "attempt": 2, "id": "d06591ff35c5ed799e8f853b65b230d4", "at_ns": 32885413178885, "since_detection_ns": 202912438, "operation": "message"}
+{"event": "tcp_connected", "attempt": 2, "id": "d06591ff35c5ed799e8f853b65b230d4", "at_ns": 32885419342833, "since_detection_ns": 209076386}
+{"event": "secure_ready", "attempt": 2, "id": "d06591ff35c5ed799e8f853b65b230d4", "at_ns": 32885479544558, "since_detection_ns": 269278111, "session": "e2441fd28678cab01feff2f8e4ba8698"}
+{"event": "delivered", "attempt": 2, "id": "d06591ff35c5ed799e8f853b65b230d4", "at_ns": 32885539444355, "since_detection_ns": 329177908}

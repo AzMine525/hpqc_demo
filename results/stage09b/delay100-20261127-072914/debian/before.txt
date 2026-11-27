@@ -1,0 +1,22 @@
+lo               UNKNOWN        127.0.0.1/8 
+enp0s3           UP             10.10.20.4/24 
+enp0s8           UP             10.10.30.20/24 
+default via 10.10.20.1 dev enp0s3 proto dhcp src 10.10.20.4 metric 1002 
+10.10.20.0/24 dev enp0s3 proto dhcp scope link src 10.10.20.4 metric 1002 
+10.10.30.0/24 dev enp0s8 proto kernel scope link src 10.10.30.20 
+local 10.10.20.4 dev enp0s3 table local proto kernel scope host src 10.10.20.4 
+broadcast 10.10.20.255 dev enp0s3 table local proto kernel scope link src 10.10.20.4 
+local 10.10.30.20 dev enp0s8 table local proto kernel scope host src 10.10.30.20 
+broadcast 10.10.30.255 dev enp0s8 table local proto kernel scope link src 10.10.30.20 
+local 127.0.0.0/8 dev lo table local proto kernel scope host src 127.0.0.1 
+local 127.0.0.1 dev lo table local proto kernel scope host src 127.0.0.1 
+broadcast 127.255.255.255 dev lo table local proto kernel scope link src 127.0.0.1 
+10.10.30.10 dev enp0s8 src 10.10.30.20 uid 1000 
+    cache 
+10.10.20.1 dev enp0s3 src 10.10.20.4 uid 1000 
+    cache 
+10.10.20.1 dev enp0s3 src 10.10.20.4 uid 1000 
+    cache 
+qdisc noqueue 0: dev lo root refcnt 2 
+qdisc fq_codel 0: dev enp0s3 root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: dev enp0s8 root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 

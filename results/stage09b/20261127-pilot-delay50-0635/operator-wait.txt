@@ -1,0 +1,6 @@
+2026-11-27T06:40:00+07:00
+console-not-started
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64
+2026-11-26T23:40:03+00:00
+LISTEN 0      1      10.10.30.10:5061 0.0.0.0:*
+{"event": "listening", "port": 5061}

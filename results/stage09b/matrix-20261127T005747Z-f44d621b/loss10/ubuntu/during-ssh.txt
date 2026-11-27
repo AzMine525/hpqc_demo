@@ -1,0 +1,6 @@
+ubuntu-pqc
+2026-11-27T01:07:55+00:00
+10.10.20.1 dev enp0s3 src 10.10.20.5 uid 1000 
+qdisc pfifo_fast 0: root refcnt 2 bands 3 priomap 1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+ Sent 1844269 bytes 6038 pkt (dropped 0, overlimits 0 requeues 1) 
+ backlog 0b 0p requeues 1

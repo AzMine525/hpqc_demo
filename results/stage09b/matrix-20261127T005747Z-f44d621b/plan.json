@@ -1,0 +1,44 @@
+[
+  {
+    "profile": "delay200",
+    "run_id": "matrix-20261127T005747Z-f44d621b/delay200",
+    "netem": "delay 200ms",
+    "dwell_seconds": 12
+  },
+  {
+    "profile": "jitter10",
+    "run_id": "matrix-20261127T005747Z-f44d621b/jitter10",
+    "netem": "delay 50ms 10ms",
+    "dwell_seconds": 12
+  },
+  {
+    "profile": "jitter20",
+    "run_id": "matrix-20261127T005747Z-f44d621b/jitter20",
+    "netem": "delay 50ms 20ms",
+    "dwell_seconds": 12
+  },
+  {
+    "profile": "loss05",
+    "run_id": "matrix-20261127T005747Z-f44d621b/loss05",
+    "netem": "loss 5%",
+    "dwell_seconds": 12
+  },
+  {
+    "profile": "loss10",
+    "run_id": "matrix-20261127T005747Z-f44d621b/loss10",
+    "netem": "loss 10%",
+    "dwell_seconds": 12
+  },
+  {
+    "profile": "loss20",
+    "run_id": "matrix-20261127T005747Z-f44d621b/loss20",
+    "netem": "loss 20%",
+    "dwell_seconds": 12
+  },
+  {
+    "profile": "outage",
+    "run_id": "matrix-20261127T005747Z-f44d621b/outage",
+    "netem": "loss 100%",
+    "dwell_seconds": 5
+  }
+]

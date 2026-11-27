@@ -1,0 +1,3 @@
+ML-KEM shared secret cocok: True
+AES-256-GCM dekripsi benar: True
+Waktu KeyGen / Encaps / Decaps (ms): 0.572 0.736 0.658

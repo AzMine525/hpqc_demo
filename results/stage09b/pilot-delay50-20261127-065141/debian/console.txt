@@ -1,0 +1,8 @@
+Running as unit: hpqc-stage09b-delay50.service; invocation ID: 7b3490cfb07244cca0221d339f6264c2
+Finished with result: success
+Main processes terminated with: code=exited, status=0/SUCCESS
+Service runtime: 12.287s
+CPU time consumed: 148ms
+Memory peak: 1.8M (swap: 0B)
+apply_exit=0
+after_exit=0

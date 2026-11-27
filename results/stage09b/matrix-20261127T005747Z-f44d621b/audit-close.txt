@@ -1,0 +1,19 @@
+[{"profile":"delay200","snapshots":true,"ping":true,"unit":true,"ubuntuProbeBracketed":true},{"profile":"jitter10","snapshots":true,"ping":true,"unit":true,"ubuntuProbeBracketed":true},{"profile":"jitter20","snapshots":true,"ping":true,"unit":true,"ubuntuProbeBracketed":true},{"profile":"loss05","snapshots":true,"ping":true,"unit":true,"ubuntuProbeBracketed":true},{"profile":"loss10","snapshots":true,"ping":true,"unit":true,"ubuntuProbeBracketed":true},{"profile":"loss20","snapshots":true,"ping":true,"unit":true,"ubuntuProbeBracketed":true},{"profile":"outage","snapshots":true,"ping":true,"unit":true,"ubuntuProbeBracketed":true}]
+
+debian-pqc
+2026-11-27T08:13:07+07:00
+10.10.20.1 dev enp0s3 src 10.10.20.4 uid 1000
+    cache
+qdisc noqueue 0: dev lo root refcnt 2
+qdisc fq_codel 0: dev enp0s3 root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64
+qdisc fq_codel 0: dev enp0s8 root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64
+LoadState=not-found
+ActiveState=inactive
+
+ubuntu-pqc
+2026-11-27T01:13:10+00:00
+10.10.20.1 dev enp0s3 src 10.10.20.5 uid 1000
+    cache
+qdisc noqueue 0: dev lo root refcnt 2
+qdisc pfifo_fast 0: dev enp0s3 root refcnt 2 bands 3 priomap 1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+qdisc pfifo_fast 0: dev enp0s8 root refcnt 2 bands 3 priomap 1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1

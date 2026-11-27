@@ -1,0 +1,4 @@
+{"event": "attempt_started", "attempt": 1, "id": "58c48b50a2a33fff84f02c93e9d5c506", "at_ns": 32880866726870, "since_detection_ns": null, "operation": "message"}
+{"event": "tcp_connected", "attempt": 1, "id": "58c48b50a2a33fff84f02c93e9d5c506", "at_ns": 32880887182489, "since_detection_ns": null}
+{"event": "secure_ready", "attempt": 1, "id": "58c48b50a2a33fff84f02c93e9d5c506", "at_ns": 32880945146190, "since_detection_ns": null, "session": "d09d0f80d3fb765cb98f0b89aacd7ea2"}
+{"event": "delivered", "attempt": 1, "id": "58c48b50a2a33fff84f02c93e9d5c506", "at_ns": 32881006494703, "since_detection_ns": null}

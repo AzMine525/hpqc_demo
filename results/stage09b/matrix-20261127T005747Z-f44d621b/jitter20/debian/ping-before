@@ -1,0 +1,9 @@
+PING 10.10.30.10 (10.10.30.10) from 10.10.30.20 enp0s8: 56(84) bytes of data.
+64 bytes from 10.10.30.10: icmp_seq=1 ttl=64 time=2.91 ms
+64 bytes from 10.10.30.10: icmp_seq=2 ttl=64 time=2.29 ms
+64 bytes from 10.10.30.10: icmp_seq=3 ttl=64 time=3.81 ms
+64 bytes from 10.10.30.10: icmp_seq=4 ttl=64 time=2.86 ms
+
+--- 10.10.30.10 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3023ms
+rtt min/avg/max/mdev = 2.293/2.967/3.805/0.541 ms

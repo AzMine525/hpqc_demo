@@ -1,0 +1,24 @@
+debian-pqc
+research
+2026-11-27T07:03:27+07:00
+3df1e695a88fb54be7bcd3431cdcbd4bb9b9b969
+3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]
+['1.0.0', '49.0.0', '7.2.2']
+enp0s3           UP             10.10.20.4/24
+enp0s8           UP             10.10.30.20/24
+10.10.30.10 dev enp0s8 src 10.10.30.20 uid 1000
+10.10.20.1 dev enp0s3 src 10.10.20.4 uid 1000
+10.10.20.1 dev enp0s3 src 10.10.20.4 uid 1000
+qdisc noqueue 0: dev lo root refcnt 2
+qdisc fq_codel 0: dev enp0s3 root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64
+qdisc fq_codel 0: dev enp0s8 root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64
+PING 10.10.30.10 (10.10.30.10) from 10.10.30.20 enp0s8: 56(84) bytes of data.
+64 bytes from 10.10.30.10: icmp_seq=1 ttl=64 time=3.27 ms
+64 bytes from 10.10.30.10: icmp_seq=2 ttl=64 time=2.14 ms
+64 bytes from 10.10.30.10: icmp_seq=3 ttl=64 time=2.73 ms
+64 bytes from 10.10.30.10: icmp_seq=4 ttl=64 time=3.92 ms
+
+--- 10.10.30.10 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3055ms
+rtt min/avg/max/mdev = 2.142/3.016/3.923/0.658 ms

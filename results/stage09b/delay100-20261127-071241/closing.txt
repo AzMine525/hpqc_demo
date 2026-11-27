@@ -1,0 +1,16 @@
+2026-11-27T07:14:41+07:00
+
+no-active-sample
+
+window-ended
+
+2026-11-27T07:21:01+07:00
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+LoadState=not-found
+ActiveState=inactive
+console-not-started
+
+2026-11-27T00:21:14+00:00
+{"event": "listening", "port": 5061}
+
+inbox_rows 0

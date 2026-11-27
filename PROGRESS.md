@@ -1,5 +1,105 @@
 # Log pengembangan dan verifikasi HPQC
 
+## 27 November 2026 — Stage 09B, eksekusi matriks tersisa
+
+**Audit akhir Stage 09 PASS.** Batch `matrix-20261127T005747Z-f44d621b` selesai exit 0 dengan tujuh profil lulus dan 315/315 receipt beban utama. Tujuh probe pascarollback memperoleh receipt dan commit. Seluruh snapshot alamat, rute, dan qdisc kembali cocok, ping 4/4 setiap arah, dan SSH manajemen tervalidasi. Netem dilepas, unit inactive/not-found, dan listener Ubuntu berhenti. Outage memicu satu retry dan reconnect setelah timeout heartbeat. Dari deteksi ke TCP 2.236,487 ms, sesi aman 4.424,204 ms dan receipt 4.579,907 ms. Waktu recovery enam profil lain N/A. Bukti sebelumnya untuk baseline, delay 50/100 ms, ACK, retry terbatas dan deduplikasi dipertahankan. [Audit roadmap](docs/stage09b.md#audit-acceptance-stage-09) · [Bukti penutupan](results/stage09b/matrix-20261127T005747Z-f44d621b/audit-close.txt)
+
+**Di luar acceptance wajib.** Timeout paksa systemd dan pemutusan SSH sengaja tetap NOT RUN. Rollback yang dinilai memakai terminasi normal unit. Stage 10/11 belum dimulai.
+
+Checkpoint `outage` **PASS** untuk instrumentasi dan rollback. Receipt 45/45, PONG 88/88, 1 retry, 1 reconnect. Di interval aktif teramati 0 receipt. Runtime unit 5.211 detik. [Bukti](results/stage09b/matrix-20261127T005747Z-f44d621b/outage/summary.json)
+
+Checkpoint `loss20` **PASS** untuk instrumentasi dan rollback. Receipt 45/45, PONG 88/88, 0 retry, 0 reconnect. Di interval aktif teramati 9 receipt. Runtime unit 12.229 detik. [Bukti](results/stage09b/matrix-20261127T005747Z-f44d621b/loss20/summary.json)
+
+Checkpoint `loss10` **PASS** untuk instrumentasi dan rollback. Receipt 45/45, PONG 90/90, 0 retry, 0 reconnect. Di interval aktif teramati 11 receipt. Runtime unit 12.185 detik. [Bukti](results/stage09b/matrix-20261127T005747Z-f44d621b/loss10/summary.json)
+
+Checkpoint `loss05` **PASS** untuk instrumentasi dan rollback. Receipt 45/45, PONG 89/89, 0 retry, 0 reconnect. Di interval aktif teramati 10 receipt. Runtime unit 12.211 detik. [Bukti](results/stage09b/matrix-20261127T005747Z-f44d621b/loss05/summary.json)
+
+Checkpoint `jitter20` **PASS** untuk instrumentasi dan rollback. Receipt 45/45, PONG 88/88, 0 retry, 0 reconnect. Di interval aktif teramati 10 receipt. Runtime unit 12.21 detik. [Bukti](results/stage09b/matrix-20261127T005747Z-f44d621b/jitter20/summary.json)
+
+Checkpoint `jitter10` **PASS** untuk instrumentasi dan rollback. Receipt 45/45, PONG 89/89, 0 retry, 0 reconnect. Di interval aktif teramati 9 receipt. Runtime unit 12.242 detik. [Bukti](results/stage09b/matrix-20261127T005747Z-f44d621b/jitter10/summary.json)
+
+Checkpoint `delay200` **PASS** untuk instrumentasi dan rollback. Receipt 45/45, PONG 80/80, 0 retry, 0 reconnect. Di interval aktif teramati 7 receipt. Runtime unit 12.154 detik. [Bukti](results/stage09b/matrix-20261127T005747Z-f44d621b/delay200/summary.json)
+
+Batch pengganti `matrix-20261127T005747Z-f44d621b` disiapkan setelah cek BatchMode mengonfirmasi rute/qdisc awal, unit tidak aktif, dan port listener lama bebas. Listener pertama siap dengan batas mulai konsol 08.08.14 WIB. [Checkpoint batch pengganti](results/stage09b/matrix-20261127T005747Z-f44d621b/checkpoint.txt)
+
+Batch `matrix-20261127T005148Z-a077cd4a` disetujui untuk tujuh profil. Controller Windows dan listener `delay200` siap, dengan batas mulai konsol 08.02.16 WIB. Menunggu satu eksekusi runner dari konsol Debian. Sebelum staging, template perintah SSH dan listener diperbaiki agar karakter `+` yang semula menjadi bagian awal command tidak ikut dijalankan. [Checkpoint controller](results/stage09b/matrix-20261127T005148Z-a077cd4a/checkpoint.txt)
+
+Checkpoint pertama **BLOCKED sebelum apply**. Konsol menolak stdin proses anak yang dibuka sebagai `/dev/tty`, karena guard pilot memerlukan nama perangkat konsol teks aktual. Qdisc tetap fq_codel, log listener hanya mencatat listening dan SQLite kosong. Runner kini meneruskan path TTY aktual yang sudah lolos guard. Bukti percobaan pertama dipertahankan dan belum ada profil impairment yang dikonsumsi. [Log runner](results/stage09b/matrix-20261127T005148Z-a077cd4a/delay200/debian/runner.txt)
+
+## 27 November 2026 — Stage 09B, persiapan matriks tersisa
+
+Checkpoint audit awal **PASS**. Bukti baseline normal, delay 50 ms, delay 100 ms dan rollback kedua impairment dibaca ulang. Ketiga beban utama menerima 45/45 receipt tanpa retry atau reconnect. Tidak ada pengulangan eksperimen.
+
+Checkpoint orkestrasi **PASS offline**. Controller menyiapkan tujuh profil berurutan dengan direktori unik, listener Ubuntu, sesi BatchMode per profil, snapshot, PSK sementara, serta analisis event/SQLite. Satu runner konsol Debian memakai sudo lokal dan unit systemd yang diturunkan dari pilot. Uji sintaks POSIX/Bash kandidat, hitung ulang bukti arsip 100 ms, fixture delivery parsial, bukti qdisc hilang dan penghentian antrean lulus. Mode execute dan uji end-to-end baru menunggu persetujuan. [Validasi](results/stage09b/matrix-preparation-20261127/validation.txt)
+
+Checkpoint izin **NOT RUN**. Delay 200 ms, jitter 10/20 ms, loss 5/10/20%, outage 5 detik serta uji rollback cabang timeout/putus SSH belum dijalankan. Izin yang diminta sekarang hanya untuk tujuh profil matriks. Audit akhir Stage 09 tetap menunggu bukti aktual. [Rencana dan perintah](docs/stage09b.md)
+
+## 27 November 2026 — Stage 09B, jendela eksekusi delay 100 ms
+
+Checkpoint preflight `delay100-20261127-072914` **PASS**. Dua login BatchMode, IP dan rute, qdisc tanpa netem, serta ping 4/4 tiap arah terverifikasi. Skrip 100 ms lulus pemeriksaan hash, `bash -n`, validasi unit systemd dan mode `before`. Listener Ubuntu 10.10.30.10:5061 siap pada 07.30.14 WIB. Batas mulai konsol 07.40.14 WIB dan listener dibatasi hingga 07.42.57 WIB. [Preflight Debian](results/stage09b/delay100-20261127-072914/debian/preflight.txt) · [Preflight Ubuntu](results/stage09b/delay100-20261127-072914/ubuntu/preflight.txt)
+
+Checkpoint eksekusi **PASS**. Pada 07.32.52 WIB root `netem 709:` delay 100 ms terlihat aktif hanya pada egress Debian enp0s8. Unit selesai normal dalam 12,124 detik dengan batas runtime 16 detik. Sampel aktif terakhir 95 paket, 10.868 byte, tanpa drop, overlimit atau requeue. Login BatchMode baru ke kedua VM lulus selama impairment.
+
+Checkpoint rollback **PASS**. `apply_exit=0`, `after_exit=0`. Root netem hilang dan Debian kembali ke fq_codel beserta opsi awal. Snapshot kedua VM identik sebelum/sesudah. SSH baru dan ping 4/4 tiap arah berhasil. Pesan baru setelah rollback mendapat receipt dan commit yang cocok. Listener Ubuntu ditutup.
+
+Checkpoint analisis **PASS**. Beban utama 45/45 receipt, 88/88 PONG, 45 commit unik, satu sesi, nol retry atau reconnect. Dengan probe pascarollback, total 46 ID cocok antara receipt, commit dan SQLite. Durasi beban 51,126 detik. Latensi delivery median/p95 58,142/502,261 ms. Di antara sampel aktif pertama dan terakhir terdapat 7 receipt dan 15 PONG. RTT TCP median pada sampel aktif 113,991 ms. Waktu recovery N/A. [Ringkasan bukti](results/stage09b/delay100-20261127-072914/summary.json) · [Analisis dan keterbatasan](docs/stage09b.md)
+
+## 27 November 2026 — Stage 09B, delay 100 ms
+
+Checkpoint preflight `delay100-20261127-071241` **PASS**. Operator memberi persetujuan untuk satu run. BatchMode kedua VM, IP dan rute eksperimen/manajemen, ping 4/4 tiap arah, serta qdisc awal tanpa netem terverifikasi. Salinan skrip berasal dari artefak 50 ms yang hash-nya cocok, dengan perubahan nama unit dan delay. `bash -n`, `systemd-analyze verify`, dan mode `before` lulus di Debian. [Debian](results/stage09b/delay100-20261127-071241/debian/preflight.txt) · [Ubuntu](results/stage09b/delay100-20261127-071241/ubuntu/preflight.txt)
+
+Checkpoint listener dan handoff konsol. Ubuntu listening pada 10.10.30.10:5061. Marker siap dibuat pada 07.14.41 WIB dan operator diberi nilai R privat serta batas mulai 07.20.00 WIB. Pengamatan tidak menemukan eksekusi konsol sampai batas mulai lewat. Pada 07.21.01 WIB marker ditutup. Debian masih memakai fq_codel dengan opsi awal, unit 100 ms inactive/not-found, listener berhenti, inbox nol baris. **Delay 100 ms, rollback aktual, dan metrik delivery NOT RUN**. Bukti normal dan 50 ms tetap berlaku. [Bukti penutupan](results/stage09b/delay100-20261127-071241/closing.txt)
+
+## 27 November 2026 — Stage 09B, baseline normal padanan
+
+Checkpoint preflight `normal-20261127-070322` **PASS**. Login SSH BatchMode kedua VM berhasil. Source dan dependency cocok dengan pilot. Jalur data enp0s8, jalur manajemen enp0s3, ping 4/4 di tiap arah, qdisc Debian fq_codel dan Ubuntu pfifo_fast tanpa netem. Direktori bukti ini terpisah dari pilot. [Debian](results/stage09b/normal-20261127-070322/debian/preflight.txt) · [Ubuntu](results/stage09b/normal-20261127-070322/ubuntu/preflight.txt)
+
+Checkpoint baseline dan audit bukti **PASS**. Client exit 0. Sebanyak 45/45 receipt cocok dengan 45 commit dan 45 baris SQLite, 88/88 heartbeat memperoleh PONG, satu sesi dan nol retry/reconnect/duplicate. Durasi event client 46,875 detik. Latensi aplikasi median 58,732 ms dan p95 85,627 ms. Cek qdisc sebelum dan sesudah cocok. Listener Ubuntu dihentikan. [Ringkasan perbandingan](results/stage09b/normal-20261127-070322/comparison.json)
+
+Checkpoint rencana delay 100 ms **PASS statis, NOT RUN**. Dua salinan turunan skrip lulus `bash -n` setelah perubahan nama unit dan nilai delay. Persetujuan terpisah diperlukan sebelum apply. Uji rollback cabang timeout dan hilangnya SSH direncanakan terpisah dari run 100 ms. [Prosedur](docs/stage09b.md)
+
+## 27 November 2026 — Stage 09B, pilot delay 50 ms PASS
+
+Operator menjalankan satu pilot dari konsol Debian pada run `pilot-delay50-20261127-065141`. Pengujian ML-KEM-768 memakai listener Ubuntu 10.10.30.10:5061 dan `netem 709:` delay 50 ms hanya pada egress enp0s8 Debian. Sistem mengamati qdisc aktif pada 06.56.51 WIB. Unit systemd memiliki batas runtime 16 detik, mencatat 12,287 detik aktual, dan keluar dengan status 0. Sampel qdisc aktif terakhir berisi 118 paket, 13.568 byte, nol drop/overlimit/requeue. SSH BatchMode tetap berhasil pada kedua VM selama gangguan.
+
+- **Delivery PASS.** Workload utama 45/45 receipt, 92 PONG dan satu sesi aman, tanpa interupsi, retry atau duplicate. Sembilan receipt berada di antara sampel qdisc aktif pertama dan terakhir. Dua receipt berada di sela sampel tepi. Pesan baru setelah rollback menambah satu receipt. Total 46 receipt, 46 commit, dan 46 baris SQLite dengan himpunan ID sama dan payload sintetis yang cocok.
+- **Rollback PASS.** `apply_exit=0`, `after_exit=0`, unit inactive/not-found, netem hilang. Snapshot dan opsi qdisc identik sebelum/sesudah di tiap VM. Debian kembali ke fq_codel handle 0:, Ubuntu root pfifo_fast. Login baru BatchMode dan ping 4/4 berhasil di kedua arah.
+- **Batas bukti.** Runtime aktual berasal dari output unit dan sampel monotonic. Akses jurnal sistem akun research terbatas. Terminasi paksa dan putus SSH sengaja belum diuji. Nilai recovery N/A karena sesi pilot tidak putus.
+
+**Stage 09 masih parsial.** Hanya pilot delay 50 ms berstatus PASS. Skenario matriks lain tetap NOT RUN. [Perintah, bukti, dan hasil pilot](docs/stage09b.md) · [Ringkasan run](results/stage09b/pilot-delay50-20261127-065141/summary.json)
+
+## 27 November 2026 — Stage 09B, preflight pilot delay 50 ms
+
+Operator mengonfirmasi akses dan sudo melalui konsol VirtualBox Debian serta memberi izin untuk satu pilot. Sekitar 06.35 WIB, SSH BatchMode sukses pada kedua VM. IP dan rute data terverifikasi via enp0s8. SSH dan gateway memakai enp0s3. Ping 4/4 tiap arah, RTT rata-rata 2,822 ms Debian → Ubuntu dan 2,439 ms sebaliknya. Root Debian fq_codel dengan opsi baseline dan default kernel fq_codel. Ubuntu root pfifo_fast. `sudo -n -l` Debian membutuhkan autentikasi lokal. Skrip dan unit lolos validasi statis serta mode before pada run privat `20261127-pilot-delay50-0635`. Impairment dan rollback aktual menunggu langkah konsol operator. [Prosedur dan bukti](docs/stage09b.md)
+
+Pada 06.41 WIB jendela listener ditutup tanpa eksekusi konsol. Inbox berisi nol baris. Root Debian masih fq_codel dengan opsi awal dan unit pilot tidak terdaftar. **Pilot BLOCKED** pada langkah sudo di konsol. **Impairment, rollback dan delivery pascarollback NOT RUN.** Gunakan direktori baru untuk jendela yang dikoordinasikan berikutnya. [Status penutupan](results/stage09b/20261127-pilot-delay50-0635/closing.txt)
+
+## 27 November 2026 — Stage 09B, baseline antar-VM lulus
+
+Pada 06.21 WIB, SSH BatchMode memverifikasi Ubuntu enp0s8 10.10.30.10/24 dan Debian enp0s8 10.10.30.20/24. Kedua rute eksperimen langsung via enp0s8. Jalur balik SSH dan gateway 10.10.20.1 memakai enp0s3. Ping 4/4 masing-masing dengan RTT rata-rata Debian → Ubuntu 4,512 ms dan Ubuntu → Debian 2,190 ms. Alamat eksperimen sementara dan harus diperiksa ulang setelah reboot. Revisi kedua guest 3df1e695a88fb54be7bcd3431cdcbd4bb9b9b969. Bukti smoke dan regresi sebelumnya tetap valid dan dipakai ulang. [Command dan bukti](docs/stage09b.md)
+
+| Pemeriksaan | Hasil |
+|---|---|
+| Stage 05, ML-KEM-768, port 5055 | **PASS**. 1 MiB tiap arah, ACK mencocokkan ID DATA, SHA-256 kirim/terima cocok silang. |
+| Stage 09 normal dan deduplikasi, port 5059 | **PASS**. Tiga receipt normal dan empat PONG. Kirim ulang satu ID pada dua sesi menghasilkan dua receipt tambahan. Lima receipt cocok dengan empat commit dan empat baris SQLite, serta satu event duplicate. |
+| Stage 09 reconnect akibat idle timeout server, port 5060 | **PASS**. Setelah EOF, client mencoba ulang ID yang sama dan memperoleh ID sesi baru. Dua receipt cocok dengan dua commit dan dua baris. Dari deteksi ke TCP 209,076 ms, ke sesi aman 269,278 ms, ke receipt 329,178 ms. |
+| Pemeriksaan sebelum pilot di Debian | **PASS**. Skrip yang hash-nya cocok dengan workspace lulus `bash -n`, snapshot qdisc/rute, ping 4/4 dan marker baseline-ok. |
+| Pilot, rollback aktual dan matriks impairment | **NOT RUN**. Langkah privileged menunggu persetujuan eksplisit dan konfirmasi terbaru akses konsol/sudo. Stage 09 tetap parsial. |
+
+## 27 November 2026 — Stage 09B, pemeriksaan dual-NIC
+
+**Stage 09 parsial.** SSH dan regresi kedua VM lulus. Baseline antar-VM terblokir pada interface eksperimen Ubuntu. Pada 06.07 WIB enp0s8 Ubuntu UP tanpa 10.10.30.10/24. Lookup ke Debian melewati enp0s3. Ping terikat enp0s8 menghasilkan 0/4 pada kedua arah. Rute balik ke pengelola SSH 10.10.20.1 terverifikasi melalui enp0s3 di kedua VM. Sebelumnya operator mengamati ping 4/4 dua arah ketika alamat eksperimen masih terpasang. [Topologi, command dan hasil](docs/stage09b.md)
+
+| Pemeriksaan aktual | Hasil |
+|---|---|
+| SSH alias dengan BatchMode dan strict host key dari konteks OpenSSH Windows pengguna | **PASS**. debian-pqc sebagai research dan ubuntu-pqc sebagai research2. Percobaan tanpa kredensial batch pada 26 November sebelumnya ditolak. |
+| Source dan environment | Host Windows branch step10 di f9578d3cedfa5104caf9f6123d36700b7c3e2b4c. Kedua guest di 3df1e695a88fb54be7bcd3431cdcbd4bb9b9b969. Seluruh 40 entri source Python dan requirements cocok. Kedua venv memakai pqcrypto 1.0.0, cryptography 49.0.0 dan psutil 7.2.2. |
+| Debian 13, CPython 3.13.5, direktori run ~/hpqc_demo/private-data/stage09b/validation-AytKYO6E | **PASS**. Smoke exit 0. Regresi 80/80 dalam 10,624 detik tanpa skip. SHA-256 transkrip d34c3e49a00379b55613a237a1c29032ab4f86b9fcb4fdf440f67be8a32b3f32. [Transkrip Debian](results/stage09b/20261127-0607/debian/regression.txt) |
+| Ubuntu 26.04.1, CPython 3.14.4, direktori run ~/hpqc_demo/private-data/stage09b/validation-NqSochT4 | **PASS**. Smoke exit 0. Regresi 80/80 dalam 7,326 detik tanpa skip. SHA-256 transkrip 00c92af163f926dfd6dc39c67df2f878c0bfb5d9d524d42f733f0aabc5d9e102. [Transkrip Ubuntu](results/stage09b/20261127-0607/ubuntu/regression.txt) |
+| Kernel, qdisc dan prosedur pilot | Kedua kernel menyediakan modul sch_netem. Debian root fq_codel, Ubuntu root pfifo_fast meskipun default kernel keduanya fq_codel. Skrip final SHA-256 107c4692768d1e082a3e0ce39fe81d0a62d682f2ba8e10f8407b188f7926850c. Pemeriksaan sintaks dan properti ExecStopPost lulus. Mode before di Debian berhenti pada ping, exit 1. Skrip memerlukan marker baseline sukses dan ping ulang sebelum pembuatan unit. [Skrip](experiments/stage09b_pilot.sh) |
+| Transfer Stage 05, receipt/inbox dan reconnect Stage 09 pada jaringan eksperimen | **NOT RUN**. Perlu pemulihan IP Ubuntu dan ping dua arah. Bukti smoke dan regresi dua guest berada di results/stage09b/20261127-0607. |
+| Pilot delay 50 ms, matriks impairment dan rollback aktual | **NOT RUN**. Operator akan mengonfirmasi ulang konsol/sudo Debian. Persetujuan pilot dan bukti rollback aktual masih diperlukan. |
+
 ## 26 November 2026 — Stage 09, pemulihan pengiriman
 
 **Implementasi dan uji Windows loopback PASS. Penerimaan keseluruhan Stage 09 masih parsial.** Matriks impairment Linux, pemeriksaan rute pengelolaan secara langsung, serta rollback qdisc nyata pada guest berstatus **NOT RUN**. Pemeriksaan XML VirtualBox baca-saja menemukan hanya slot 0 aktif pada masing-masing Ubuntu-PQC dan Debian-PQC, keduanya NATNetwork PQC-LAB. Status akses konsol dan rute SSH aktif memerlukan pemeriksaan operator sebelum menjalankan panduan dengan izin eksplisit.

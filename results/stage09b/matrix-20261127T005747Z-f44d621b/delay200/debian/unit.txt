@@ -1,0 +1,6 @@
+Running as unit: hpqc-stage09b-matrix.service
+Finished with result: success
+Main processes terminated with: code=exited, status=0/SUCCESS
+Service runtime: 12.154s
+CPU time consumed: 92ms
+Memory peak: 1.8M (swap: 0B)

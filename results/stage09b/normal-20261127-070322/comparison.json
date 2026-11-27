@@ -1,0 +1,59 @@
+{
+  "normal": {
+    "delivery": 45,
+    "idsUnique": 45,
+    "commits": 45,
+    "serverIdsMatch": true,
+    "pong": 88,
+    "heartbeatAttempts": 88,
+    "secureSessions": 1,
+    "reconnect": 0,
+    "retry": 0,
+    "interrupt": 0,
+    "duplicate": 0,
+    "spanSeconds": 46.87549034,
+    "deliveryMs": {
+      "count": 45,
+      "median": 58.73165,
+      "p95": 85.626993
+    },
+    "tcpRttOffMs": {
+      "count": 77,
+      "median": 21.715,
+      "p95": 23.186
+    },
+    "inboxRows": 45,
+    "inboxMatches": true,
+    "all8Bytes": true,
+    "netemSamples": 0
+  },
+  "pilotMain": {
+    "delivery": 45,
+    "idsUnique": 45,
+    "commits": 45,
+    "serverIdsMatch": true,
+    "pong": 92,
+    "heartbeatAttempts": 92,
+    "secureSessions": 1,
+    "reconnect": 0,
+    "retry": 0,
+    "interrupt": 0,
+    "duplicate": 0,
+    "spanSeconds": 48.841396229,
+    "deliveryMs": {
+      "count": 45,
+      "median": 58.892162,
+      "p95": 231.448005
+    },
+    "tcpRttOffMs": {
+      "count": 59,
+      "median": 21.897,
+      "p95": 37.595
+    },
+    "tcpRttActiveMs": {
+      "count": 19,
+      "median": 68.926,
+      "p95": 78.674
+    }
+  }
+}
