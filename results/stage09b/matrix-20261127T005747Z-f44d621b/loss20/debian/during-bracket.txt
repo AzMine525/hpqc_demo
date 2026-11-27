@@ -1,0 +1,5 @@
+2026-11-27T08:09:35+07:00
+qdisc netem 709: root refcnt 2 limit 1000 loss 20% seed 12904180293049640035
+RuntimeMaxUSec=16s
+ExecStopPost={ path=/bin/sh ; argv[]=/bin/sh -ec if /usr/sbin/tc qdisc show dev enp0s8 | /usr/bin/grep -q "^qdisc netem 709: root "; then exec /usr/sbin/tc qdisc del dev enp0s8 root handle 709:; else /usr/sbin/tc qdisc show dev enp0s8 | /usr/bin/grep -q "^qdisc fq_codel 0: root "; fi ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+ActiveState=active

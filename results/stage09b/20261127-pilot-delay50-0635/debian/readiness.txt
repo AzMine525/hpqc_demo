@@ -1,0 +1,18 @@
+pilot-reviewed.sh: OK
+console-reviewed.sh: OK
+systemd-analyze verify=PASS
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64
+10.10.20.1 dev enp0s3 src 10.10.20.4 uid 1000
+    cache
+10.10.30.10 dev enp0s8 src 10.10.30.20 uid 1000
+    cache
+fq_codel
+PING 10.10.30.10 (10.10.30.10) from 10.10.30.20 enp0s8: 56(84) bytes of data.
+64 bytes from 10.10.30.10: icmp_seq=1 ttl=64 time=3.81 ms
+64 bytes from 10.10.30.10: icmp_seq=2 ttl=64 time=2.98 ms
+64 bytes from 10.10.30.10: icmp_seq=3 ttl=64 time=3.00 ms
+64 bytes from 10.10.30.10: icmp_seq=4 ttl=64 time=3.94 ms
+
+--- 10.10.30.10 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+rtt min/avg/max/mdev = 2.977/3.430/3.935/0.444 ms

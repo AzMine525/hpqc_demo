@@ -1,0 +1,8 @@
+2026-11-27T07:56:44+07:00
+10.10.20.1 dev enp0s3 src 10.10.20.4 uid 1000 
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 54712 bytes 478 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 167 drop_overlimit 0 new_flow_count 1 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+console_exit=1

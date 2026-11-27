@@ -1,0 +1,6 @@
+Running as unit: hpqc-stage09b-matrix.service; invocation ID: 4711d08624d343b1bf5b87c1f0728e72
+Finished with result: success
+Main processes terminated with: code=exited, status=0/SUCCESS
+Service runtime: 12.210s
+CPU time consumed: 134ms
+Memory peak: 1.7M (swap: 0B)

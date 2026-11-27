@@ -1,0 +1,10 @@
+Pemeriksaan offline pada Windows. Tidak ada SSH, listener, sudo, unit aktif, atau perubahan jaringan.
+Interpreter dijalankan dengan py -3 -B.
+Data fixture berasal dari salinan sementara bukti 100 ms. Bukti asli dipertahankan.
+Keluaran:
+PASS: 7 rendered profiles, console, server and unchanged rollback bounds
+PASS: archived 100 ms proof recalculates 45 total and 7 active receipts
+PASS: exhausted transfer is reported as a result, committed without receipt
+PASS: missing qdisc window rejects evidence
+PASS: controller stops after first failure
+PASS: connection, secure session and delivery recovery are distinct

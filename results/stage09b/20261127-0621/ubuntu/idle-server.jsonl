@@ -1,0 +1,5 @@
+{"event": "listening", "port": 5060}
+{"event": "committed", "id": "f10a453515e86c50d49f46c423b7d4d2"}
+{"event": "session_closed", "error": "TimeoutError"}
+{"event": "committed", "id": "d06591ff35c5ed799e8f853b65b230d4"}
+{"event": "session_closed", "error": "EOFError"}

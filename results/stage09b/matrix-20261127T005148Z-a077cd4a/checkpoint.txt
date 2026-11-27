@@ -1,0 +1,2 @@
+delay200 START 2026-11-27T00:51:55.909053+00:00
+delay200 STOP 2026-11-27T00:56:56.021105+00:00 RuntimeError('Console gagal atau observasi SSH saat netem aktif tidak tersedia.')

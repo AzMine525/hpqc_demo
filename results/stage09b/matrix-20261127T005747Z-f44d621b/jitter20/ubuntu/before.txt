@@ -1,0 +1,36 @@
+ubuntu-pqc
+research2
+enp0s3           UP             10.10.20.5/24 metric 100 
+enp0s8           UP             10.10.30.10/24 
+10.10.30.20 dev enp0s8 src 10.10.30.10 uid 1000 
+10.10.20.1 dev enp0s3 src 10.10.20.5 uid 1000 
+lo               UNKNOWN        127.0.0.1/8 
+enp0s3           UP             10.10.20.5/24 metric 100 
+enp0s8           UP             10.10.30.10/24 
+default via 10.10.20.1 dev enp0s3 proto dhcp src 10.10.20.5 metric 100 
+10.10.20.0/24 dev enp0s3 proto kernel scope link src 10.10.20.5 metric 100 
+10.10.20.1 dev enp0s3 proto dhcp scope link src 10.10.20.5 metric 100 
+10.10.30.0/24 dev enp0s8 proto kernel scope link src 10.10.30.10 
+10.252.128.2 via 10.10.20.1 dev enp0s3 proto dhcp src 10.10.20.5 metric 100 
+local 10.10.20.5 dev enp0s3 table local proto kernel scope host src 10.10.20.5 
+broadcast 10.10.20.255 dev enp0s3 table local proto kernel scope link src 10.10.20.5 
+local 10.10.30.10 dev enp0s8 table local proto kernel scope host src 10.10.30.10 
+broadcast 10.10.30.255 dev enp0s8 table local proto kernel scope link src 10.10.30.10 
+local 127.0.0.0/8 dev lo table local proto kernel scope host src 127.0.0.1 
+local 127.0.0.1 dev lo table local proto kernel scope host src 127.0.0.1 
+broadcast 127.255.255.255 dev lo table local proto kernel scope link src 127.0.0.1 
+qdisc noqueue 0: dev lo root refcnt 2 
+qdisc pfifo_fast 0: dev enp0s3 root refcnt 2 bands 3 priomap 1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+qdisc pfifo_fast 0: dev enp0s8 root refcnt 2 bands 3 priomap 1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+2026-11-27T01:04:15+00:00
+7.0.0-44-generic
+3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0] ['1.0.0', '49.0.0', '7.2.2']
+PING 10.10.30.20 (10.10.30.20) from 10.10.30.10 enp0s8: 56(84) bytes of data.
+64 bytes from 10.10.30.20: icmp_seq=1 ttl=64 time=2.54 ms
+64 bytes from 10.10.30.20: icmp_seq=2 ttl=64 time=0.822 ms
+64 bytes from 10.10.30.20: icmp_seq=3 ttl=64 time=1.78 ms
+64 bytes from 10.10.30.20: icmp_seq=4 ttl=64 time=1.15 ms
+
+--- 10.10.30.20 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3008ms
+rtt min/avg/max/mdev = 0.822/1.569/2.535/0.654 ms

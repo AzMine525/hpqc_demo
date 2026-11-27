@@ -1,0 +1,6 @@
+ubuntu-pqc
+research2
+2026-11-26T23:56:58+00:00
+10.10.20.1 dev enp0s3 src 10.10.20.5 uid 1000
+    cache
+qdisc pfifo_fast 0: root refcnt 2 bands 3 priomap 1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1

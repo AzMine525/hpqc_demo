@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "client_exit": 0,
+  "workload": {
+    "planned_messages": 45,
+    "started": 45,
+    "receipts": 45,
+    "delivery_rate": 1.0,
+    "heartbeat_started": 89,
+    "pong": 89,
+    "heartbeat_success_rate": 1.0,
+    "secure_sessions": [
+      "2022998c981ac9cb1a85cde893a3c22a"
+    ],
+    "reconnect": 0,
+    "retry": 0,
+    "recovery": [],
+    "latency_ms": {
+      "n": 45,
+      "median": 59.271223,
+      "p95": 129.7508
+    },
+    "duration_until_last_event_ms": 47376.319826,
+    "committed_without_receipt": []
+  },
+  "impairment": {
+    "netem": "qdisc netem 709: root refcnt 2 limit 1000 loss 5% seed 12536491018670727826",
+    "configured_seconds": 12,
+    "unit_runtime_s": 12.211,
+    "observed_bounds_ns": [
+      39053382168220,
+      39054005309199,
+      39065406390710,
+      39066046410508
+    ],
+    "receipts": 10,
+    "boundary_receipts": 1,
+    "pong": 22,
+    "heartbeat_starts": 21,
+    "pongs_started_and_finished_active": 21,
+    "start_and_finish_latency_ms": {
+      "n": 10,
+      "median": 58.4426465,
+      "p95": 283.778652
+    },
+    "tcp_rtt_ms": {
+      "n": 20,
+      "median": 21.4995,
+      "p95": 22.786
+    },
+    "last_qdisc_counters": {
+      "bytes": 15858,
+      "packets": 139,
+      "dropped": 4,
+      "overlimits": 0,
+      "requeues": 0
+    }
+  },
+  "outside_impairment_rtt_ms": {
+    "n": 57,
+    "median": 21.444,
+    "p95": 23.051
+  },
+  "inbox": {
+    "commits": 46,
+    "unique_rows": 46,
+    "duplicates": 0,
+    "post_probe": [
+      "58c565a61cc2e558c537c98f827028c2"
+    ]
+  }
+}

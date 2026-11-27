@@ -56,6 +56,8 @@ Run outage mencatat tiga interupsi transport. Satu receipt tiba sebelum gangguan
 
 ## Panduan manual Linux tc netem dan rollback
 
+Untuk eksperimen dua VM Stage 09B, gunakan [runbook dual-NIC dan rollback systemd](stage09b.md). Panduan di bawah mencatat prosedur generik dan kondisi host saat Stage 09 awal.
+
 Status pengujian guest **NOT RUN**. Langkah berikut untuk operator setelah ada izin eksplisit untuk interface data, arah, profil, dan durasi. Gunakan konsol VirtualBox atau jalur manajemen terpisah yang telah dicoba. Periksa akses konsol dan jalur balik SSH sebelum, selama, dan setelah uji. Pada pemeriksaan XML host, Ubuntu-PQC dan Debian-PQC masing-masing menampilkan satu NIC aktif di PQC-LAB. Verifikasi rute aktif di dalam guest pada hari pengujian.
 
 1. Dari konsol guest catat `ip -br addr`, `ip route get <IP-peer-data>`, dan bila memakai SSH, `ip route get <IP-pengelola>`. Catat interface fisik/virtual yang dipilih dan konfirmasikan akses konsol independen. Jalankan baseline dua terminal tanpa qdisc tambahan dan simpan event JSON Lines pada kedua endpoint. Jalankan satu profil per percobaan. Contoh membatasi perubahan pada egress interface data khusus yang hanya membawa trafik eksperimen.

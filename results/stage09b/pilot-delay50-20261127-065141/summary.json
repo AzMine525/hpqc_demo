@@ -1,0 +1,50 @@
+{
+  "receipts": 46,
+  "unique": 46,
+  "commits": 46,
+  "inbox": 46,
+  "pong": 92,
+  "sessionCount": 1,
+  "retry": 0,
+  "interrupt": 0,
+  "duplicate": 0,
+  "counts": {
+    "before": 3,
+    "start_uncertain": 1,
+    "during": 9,
+    "end_uncertain": 1,
+    "after": 31
+  },
+  "prev": 34887575904290,
+  "first": 34888227141473,
+  "last": 34899691508248,
+  "next": 34900289408735,
+  "firstStats": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "lastStats": [
+    13568,
+    118,
+    0,
+    0,
+    0
+  ],
+  "postID": "ac4e758a9d5925601da187c37be54c25",
+  "equal": true,
+  "idMatch": true,
+  "allBytes": true,
+  "observedMonotonicMinSeconds": 11.464366775,
+  "observedMonotonicMaxSeconds": 12.713504445,
+  "unitRuntimeSeconds": 12.287,
+  "qdiscStatsFields": [
+    "sent_bytes",
+    "sent_packets",
+    "dropped",
+    "overlimits",
+    "requeues"
+  ]
+}

@@ -1,0 +1,23 @@
+ubuntu-pqc
+research2
+2026-11-26T23:21:48+00:00
+lo               UNKNOWN        127.0.0.1/8
+enp0s3           UP             10.10.20.5/24 metric 100
+enp0s8           UP             10.10.30.10/24
+10.10.30.20 dev enp0s8 src 10.10.30.10 uid 1000
+    cache
+10.10.20.1 dev enp0s3 src 10.10.20.5 uid 1000
+    cache
+10.10.20.1 dev enp0s3 src 10.10.20.5 uid 1000
+    cache
+PING 10.10.30.20 (10.10.30.20) from 10.10.30.10 enp0s8: 56(84) bytes of data.
+64 bytes from 10.10.30.20: icmp_seq=1 ttl=64 time=2.72 ms
+64 bytes from 10.10.30.20: icmp_seq=2 ttl=64 time=1.38 ms
+64 bytes from 10.10.30.20: icmp_seq=3 ttl=64 time=2.64 ms
+64 bytes from 10.10.30.20: icmp_seq=4 ttl=64 time=2.02 ms
+
+--- 10.10.30.20 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3021ms
+rtt min/avg/max/mdev = 1.377/2.190/2.723/0.541 ms
+3df1e695a88fb54be7bcd3431cdcbd4bb9b9b969
+State  Recv-Q Send-Q Local Address:Port Peer Address:Port

@@ -1,0 +1,176 @@
+{
+  "delay100Main": {
+    "receipt": 45,
+    "pong": 88,
+    "heartbeatAttempts": 88,
+    "spanSeconds": 51.125982546,
+    "sessionCount": 1,
+    "retry": 0,
+    "interruptions": 0,
+    "phases": {
+      "before": {
+        "receipt": 3,
+        "pong": 6
+      },
+      "start_uncertain": {
+        "receipt": 1,
+        "pong": 1
+      },
+      "active": {
+        "receipt": 7,
+        "pong": 15
+      },
+      "end_uncertain": {
+        "receipt": 1,
+        "pong": 0
+      },
+      "after": {
+        "receipt": 33,
+        "pong": 66
+      }
+    },
+    "deliveryMs": {
+      "n": 45,
+      "median": 58.142405,
+      "p95": 502.261097
+    },
+    "deliveryWhollyActiveMs": {
+      "n": 7,
+      "median": 499.093434,
+      "p95": 504.169702
+    },
+    "rttOffMs": {
+      "n": 62,
+      "median": 21.9535,
+      "p95": 41.004
+    },
+    "rttActiveMs": {
+      "n": 21,
+      "median": 113.991,
+      "p95": 125.296
+    },
+    "bounds": {
+      "precedingOff": 37048938034427,
+      "firstOn": 37049509277243,
+      "lastOn": 37061245318845,
+      "followingOff": 37061807891082,
+      "minimumObservedSeconds": 11.736041602,
+      "maximumBracketSeconds": 12.869856655
+    },
+    "lastQdiscSample": {
+      "kind": "qdisc netem 709: root refcnt 2 limit 1000 delay 100ms seed 7209847352153228484",
+      "sentBytes": 10868,
+      "sentPackets": 95,
+      "dropped": 0,
+      "overlimits": 0,
+      "requeues": 0
+    }
+  },
+  "delay50Main": {
+    "receipt": 45,
+    "pong": 92,
+    "heartbeatAttempts": 92,
+    "spanSeconds": 48.841396229,
+    "sessionCount": 1,
+    "retry": 0,
+    "interruptions": 0,
+    "phases": {
+      "before": {
+        "receipt": 3,
+        "pong": 6
+      },
+      "start_uncertain": {
+        "receipt": 1,
+        "pong": 1
+      },
+      "active": {
+        "receipt": 9,
+        "pong": 18
+      },
+      "end_uncertain": {
+        "receipt": 1,
+        "pong": 1
+      },
+      "after": {
+        "receipt": 31,
+        "pong": 66
+      }
+    },
+    "deliveryMs": {
+      "n": 45,
+      "median": 58.892162,
+      "p95": 231.448005
+    },
+    "deliveryWhollyActiveMs": {
+      "n": 9,
+      "median": 221.843056,
+      "p95": 426.100384
+    },
+    "rttOffMs": {
+      "n": 59,
+      "median": 21.897,
+      "p95": 37.595
+    },
+    "rttActiveMs": {
+      "n": 19,
+      "median": 68.926,
+      "p95": 78.674
+    },
+    "bounds": {
+      "precedingOff": 34887575904290,
+      "firstOn": 34888227141473,
+      "lastOn": 34899691508248,
+      "followingOff": 34900289408735,
+      "minimumObservedSeconds": 11.464366775,
+      "maximumBracketSeconds": 12.713504445
+    },
+    "lastQdiscSample": {
+      "kind": "qdisc netem 709: root refcnt 2 limit 1000 delay 50ms seed 1162576572044927189",
+      "sentBytes": 13568,
+      "sentPackets": 118,
+      "dropped": 0,
+      "overlimits": 0,
+      "requeues": 0
+    }
+  },
+  "normalMain": {
+    "delivery": 45,
+    "idsUnique": 45,
+    "commits": 45,
+    "serverIdsMatch": true,
+    "pong": 88,
+    "heartbeatAttempts": 88,
+    "secureSessions": 1,
+    "reconnect": 0,
+    "retry": 0,
+    "interrupt": 0,
+    "duplicate": 0,
+    "spanSeconds": 46.87549034,
+    "deliveryMs": {
+      "count": 45,
+      "median": 58.73165,
+      "p95": 85.626993
+    },
+    "tcpRttOffMs": {
+      "count": 77,
+      "median": 21.715,
+      "p95": 23.186
+    },
+    "inboxRows": 45,
+    "inboxMatches": true,
+    "all8Bytes": true,
+    "netemSamples": 0
+  },
+  "verified": {
+    "totalReceipts": 46,
+    "totalCommits": 46,
+    "totalInboxRows": 46,
+    "matchingIDs": true,
+    "eightByteRows": true,
+    "duplicateEvents": 0,
+    "postReceipt": "4781b3fc268b808aca125ed829007203",
+    "unitRuntimeSeconds": 12.124,
+    "debSnapshotMatches": true,
+    "ubuntuSnapshotMatches": true
+  }
+}

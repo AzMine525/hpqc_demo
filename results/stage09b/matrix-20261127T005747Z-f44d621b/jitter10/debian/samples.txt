@@ -1,0 +1,687 @@
+38846292262561
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 54859 bytes 477 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port Peer Address:Port
+38846909916814
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 57070 bytes 488 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:212 rtt:11.685/15.064 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:1477 bytes_acked:1478 bytes_received:1573 segs_out:11 segs_in:10 data_segs_out:6 data_segs_in:5 send 9913564bps lastsnd:136 lastrcv:140 lastack:92 pacing_rate 19826488bps delivery_rate 9121256bps delivered:7 app_limited busy:104ms rcv_space:14480 rcv_ssthresh:66984 minrtt:1.27 snd_wnd:66560 rcv_wnd:67072
+38847525265391
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 58058 bytes 497 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      80       10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:216 rtt:13.058/16.618 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:1839 bytes_acked:1760 bytes_received:1935 segs_out:19 segs_in:17 data_segs_out:10 data_segs_in:9 send 8871190bps lastsnd:16 lastrcv:24 lastack:24 pacing_rate 17741864bps delivery_rate 9121256bps delivered:10 app_limited busy:164ms unacked:1 rcv_space:14480 rcv_ssthresh:66984 minrtt:1.27 snd_wnd:66560 rcv_wnd:67072
+38848162288341
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 58922 bytes 504 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:216 rtt:15.99/18.649 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:2209 bytes_acked:2210 bytes_received:2276 segs_out:25 segs_in:25 data_segs_out:14 data_segs_in:13 send 7244528bps lastsnd:32 lastrcv:28 lastack:28 pacing_rate 14488936bps delivery_rate 9121256bps delivered:15 app_limited busy:248ms rcv_space:14480 rcv_ssthresh:66984 minrtt:1.27 snd_wnd:66560 rcv_wnd:67072
+38848779460076
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 59645 bytes 511 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:20.469/21.674 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:2470 bytes_acked:2471 bytes_received:2558 segs_out:32 segs_in:31 data_segs_out:17 data_segs_in:16 send 5659290bps lastsnd:212 lastrcv:212 lastack:168 pacing_rate 11318440bps delivery_rate 9121256bps delivered:18 app_limited busy:340ms rcv_space:14480 rcv_ssthresh:66984 minrtt:1.27 snd_wnd:66560 rcv_wnd:67072
+38849358477277
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 60787 bytes 521 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:21.035/21.519 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:2920 bytes_acked:2921 bytes_received:3000 segs_out:41 segs_in:40 data_segs_out:22 data_segs_in:21 send 5507012bps lastsnd:92 lastrcv:92 lastack:52 pacing_rate 11013824bps delivery_rate 9121256bps delivered:23 app_limited busy:428ms rcv_space:14480 rcv_ssthresh:66984 minrtt:1.27 snd_wnd:66560 rcv_wnd:67072
+38849938745029
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 61399 bytes 526 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:220 rtt:17.468/19.401 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:3290 bytes_acked:3291 bytes_received:3341 segs_out:47 segs_in:47 data_segs_out:26 data_segs_in:25 send 6631555bps lastsnd:12 lastrcv:8 lastack:8 pacing_rate 13262824bps delivery_rate 12232312bps delivered:27 app_limited busy:484ms rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38850537928483
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 445 bytes 4 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      80       10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:228 rtt:24.562/23.431 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:3551 bytes_acked:3472 bytes_received:3623 segs_out:54 segs_in:52 data_segs_out:29 data_segs_in:28 send 4716228bps lastsnd:108 lastrcv:108 lastack:108 pacing_rate 9432216bps delivery_rate 12232312bps delivered:29 app_limited busy:684ms unacked:1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38851149133833
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 1211 bytes 10 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:252 rtt:48.722/28.037 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:3921 bytes_acked:3922 bytes_received:3964 segs_out:60 segs_in:60 data_segs_out:33 data_segs_in:32 send 2377571bps lastsnd:88 lastrcv:44 lastack:44 pacing_rate 4755088bps delivery_rate 12232312bps delivered:34 app_limited busy:964ms rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38851747100410
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 1934 bytes 17 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:260 rtt:58.397/28.175 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:4182 bytes_acked:4183 bytes_received:4246 segs_out:67 segs_in:66 data_segs_out:36 data_segs_in:35 send 1983664bps lastsnd:100 lastrcv:104 lastack:16 pacing_rate 3967280bps delivery_rate 12232312bps delivered:37 app_limited busy:1196ms rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38852315993516
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 2546 bytes 22 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 154b 1p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      88       10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:264 rtt:60.404/19.772 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:4552 bytes_acked:4465 bytes_received:4507 segs_out:73 segs_in:72 data_segs_out:40 data_segs_in:38 send 1917754bps lastsnd:40 lastrcv:40 lastack:40 pacing_rate 3835448bps delivery_rate 12232312bps delivered:40 app_limited busy:1428ms unacked:1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38852889817477
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 3145 bytes 27 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 66b 1p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:264 rtt:63.709/15.853 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:4733 bytes_acked:4734 bytes_received:4768 segs_out:78 segs_in:77 data_segs_out:42 data_segs_in:41 send 1818267bps lastsnd:152 lastrcv:88 lastack:88 pacing_rate 3636504bps delivery_rate 12232312bps delivered:43 app_limited busy:1600ms rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38853476957941
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 3868 bytes 34 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 167b 1p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:268 rtt:67.465/24.383 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:5095 bytes_acked:5096 bytes_received:5050 segs_out:85 segs_in:84 data_segs_out:46 data_segs_in:44 send 1717038bps lastsnd:56 lastrcv:176 lastack:8 pacing_rate 3434064bps delivery_rate 12232312bps delivered:47 app_limited busy:1868ms rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38854106076842
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 4634 bytes 40 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:272 rtt:69.522/14.565 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:5364 bytes_acked:5365 bytes_received:5391 segs_out:90 segs_in:90 data_segs_out:49 data_segs_in:48 send 1666235bps lastsnd:112 lastrcv:40 lastack:40 pacing_rate 3332448bps delivery_rate 12232312bps delivered:50 app_limited busy:2084ms rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38854732889031
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 5357 bytes 47 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      181      10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:272 rtt:69.797/17.865 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:5625 bytes_acked:5546 bytes_received:5673 segs_out:97 segs_in:95 data_segs_out:52 data_segs_in:51 send 1659670bps lastsnd:84 lastrcv:88 lastack:88 pacing_rate 3319312bps delivery_rate 12232312bps delivered:52 app_limited busy:2312ms unacked:1 rcv_space:14480 rcv_ssthresh:66984 notsent:101 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38855321717502
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 6123 bytes 53 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:272 rtt:71.439/19.051 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:5995 bytes_acked:5996 bytes_received:6014 segs_out:103 segs_in:103 data_segs_out:56 data_segs_in:55 send 1621523bps lastsnd:80 lastrcv:20 lastack:20 pacing_rate 3243000bps delivery_rate 12232312bps delivered:57 app_limited busy:2592ms rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38855957907801
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 6846 bytes 60 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      181      10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:272 rtt:70.96/19.277 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:6256 bytes_acked:6177 bytes_received:6296 segs_out:110 segs_in:108 data_segs_out:59 data_segs_in:58 send 1632469bps lastsnd:88 lastrcv:92 lastack:92 pacing_rate 3264928bps delivery_rate 12232312bps delivered:59 app_limited busy:2820ms unacked:1 rcv_space:14480 rcv_ssthresh:66984 notsent:101 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38856547547182
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 7612 bytes 66 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:272 rtt:70.171/19.081 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:6626 bytes_acked:6627 bytes_received:6637 segs_out:116 segs_in:116 data_segs_out:63 data_segs_in:62 send 1650824bps lastsnd:84 lastrcv:28 lastack:28 pacing_rate 3301640bps delivery_rate 12232312bps delivered:64 app_limited busy:3084ms rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38857161668135
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 8335 bytes 73 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      101      10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:268 rtt:67.793/18.286 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:6988 bytes_acked:6888 bytes_received:6919 segs_out:124 segs_in:123 data_segs_out:67 data_segs_in:65 send 1708731bps lastrcv:80 lastack:16 pacing_rate 3417448bps delivery_rate 12232312bps delivered:67 app_limited busy:3280ms unacked:1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38857785850956
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 9101 bytes 79 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:268 rtt:67.259/19.001 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:7257 bytes_acked:7258 bytes_received:7260 segs_out:129 segs_in:130 data_segs_out:70 data_segs_in:69 send 1722297bps lastsnd:88 lastrcv:40 lastack:40 pacing_rate 3444568bps delivery_rate 12232312bps delivered:71 app_limited busy:3548ms rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38858366082303
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 9612 bytes 84 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 212b 2p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      80       10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:272 rtt:68.193/18.712 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:7518 bytes_acked:7439 bytes_received:7542 segs_out:136 segs_in:135 data_segs_out:73 data_segs_in:72 send 1698708bps lastsnd:28 lastrcv:32 lastack:32 pacing_rate 3397384bps delivery_rate 12232312bps delivered:73 app_limited busy:3724ms unacked:1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38858983416136
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 10423 bytes 91 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 167b 1p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      101      10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:276 rtt:73.238/20.751 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:7888 bytes_acked:7788 bytes_received:7803 segs_out:142 segs_in:141 data_segs_out:77 data_segs_in:75 send 1581693bps lastsnd:40 lastrcv:340 lastack:240 pacing_rate 3163352bps delivery_rate 12232312bps delivered:77 app_limited busy:4056ms unacked:1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38859594998185
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 11101 bytes 97 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 212b 2p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      80       10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:272 rtt:71.067/17.992 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:8149 bytes_acked:8070 bytes_received:8165 segs_out:149 segs_in:148 data_segs_out:80 data_segs_in:79 send 1630011bps lastsnd:24 lastrcv:28 lastack:28 pacing_rate 3260016bps delivery_rate 12232312bps delivered:80 app_limited busy:4244ms unacked:1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38860215216925
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 11912 bytes 104 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 167b 1p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      101      10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:272 rtt:71.72/15.871 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:8519 bytes_acked:8419 bytes_received:8426 segs_out:155 segs_in:154 data_segs_out:84 data_segs_in:82 send 1615170bps lastsnd:28 lastrcv:344 lastack:256 pacing_rate 3230328bps delivery_rate 12232312bps delivered:84 app_limited busy:4540ms unacked:1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38860850047293
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 12590 bytes 110 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 212b 2p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      80       10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:272 rtt:70.555/16.365 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:8780 bytes_acked:8701 bytes_received:8788 segs_out:162 segs_in:161 data_segs_out:87 data_segs_in:86 send 1641840bps lastsnd:20 lastrcv:24 lastack:24 pacing_rate 3283664bps delivery_rate 12232312bps delivered:87 app_limited busy:4736ms unacked:1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38861443238541
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 13401 bytes 117 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 167b 1p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      101      10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:272 rtt:69.983/19.618 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:9150 bytes_acked:9050 bytes_received:9049 segs_out:168 segs_in:167 data_segs_out:91 data_segs_in:89 send 1655259bps lastsnd:20 lastrcv:328 lastack:240 pacing_rate 3310512bps delivery_rate 12232312bps delivered:91 app_limited busy:5016ms unacked:1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38862041520774
+qdisc netem 709: root refcnt 2 limit 1000 delay 50ms  10ms seed 15457812052978576269
+ Sent 14013 bytes 122 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 66b 1p requeues 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:272 rtt:68.766/19.175 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:9331 bytes_acked:9332 bytes_received:9310 segs_out:173 segs_in:173 data_segs_out:93 data_segs_in:92 send 1684553bps lastsnd:180 lastrcv:120 lastack:120 pacing_rate 3369088bps delivery_rate 12232312bps delivered:94 app_limited busy:5188ms rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38862662336571
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 224 bytes 2 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      181      10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:268 rtt:66.791/20.033 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:10 bytes_sent:9760 bytes_retrans:80 bytes_acked:9601 bytes_received:9672 segs_out:182 segs_in:180 data_segs_out:98 data_segs_in:97 send 1734365bps lastsnd:24 lastrcv:312 lastack:32 pacing_rate 3468712bps delivery_rate 12232312bps delivered:97 app_limited busy:5688ms unacked:1 retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 notsent:101 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38863310716020
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 1212 bytes 11 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:248 rtt:47.783/16.441 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:10122 bytes_retrans:80 bytes_acked:10043 bytes_received:10034 segs_out:190 segs_in:189 data_segs_out:102 data_segs_in:101 send 1697005bps lastsnd:260 lastrcv:260 lastack:212 pacing_rate 2036376bps delivery_rate 12232312bps delivered:102 app_limited busy:5808ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38863957799480
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 2799 bytes 25 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:236 rtt:32.254/13.617 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:10753 bytes_retrans:80 bytes_acked:10674 bytes_received:10657 segs_out:203 segs_in:202 data_segs_out:109 data_segs_in:108 send 2514045bps lastsnd:92 lastrcv:92 lastack:48 pacing_rate 3016840bps delivery_rate 12232312bps delivered:109 app_limited busy:5952ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38864567736299
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 3565 bytes 31 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      80       10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:228 rtt:24.084/14.706 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:11203 bytes_retrans:80 bytes_acked:11044 bytes_received:11099 segs_out:212 segs_in:210 data_segs_out:114 data_segs_in:113 send 3366883bps lastrcv:4 lastack:4 pacing_rate 4040152bps delivery_rate 12232312bps delivered:113 app_limited busy:6000ms unacked:1 retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38865169301361
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 4386 bytes 39 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:228 rtt:26.08/17.073 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:11384 bytes_retrans:80 bytes_acked:11305 bytes_received:11280 segs_out:216 segs_in:215 data_segs_out:116 data_segs_in:115 send 3109202bps lastsnd:236 lastrcv:240 lastack:192 pacing_rate 3730928bps delivery_rate 12232312bps delivered:116 app_limited busy:6092ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38865761393559
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 5528 bytes 49 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:23.373/19.21 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:11834 bytes_retrans:80 bytes_acked:11755 bytes_received:11722 segs_out:225 segs_in:224 data_segs_out:121 data_segs_in:120 send 3469302bps lastsnd:128 lastrcv:128 lastack:84 pacing_rate 4163048bps delivery_rate 12232312bps delivered:121 app_limited busy:6192ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38866376338208
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 6272 bytes 56 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      80       10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:21.362/20.232 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:12196 bytes_retrans:80 bytes_acked:12037 bytes_received:12084 segs_out:233 segs_in:231 data_segs_out:125 data_segs_in:124 send 3795899bps lastsnd:28 lastrcv:44 lastack:44 pacing_rate 4555024bps delivery_rate 12232312bps delivered:124 app_limited busy:6272ms unacked:1 retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38867021117865
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 7184 bytes 63 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:20.244/20.654 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:12566 bytes_retrans:80 bytes_acked:12487 bytes_received:12425 segs_out:239 segs_in:239 data_segs_out:129 data_segs_in:128 send 4005533bps lastsnd:16 lastrcv:8 lastack:8 pacing_rate 4806544bps delivery_rate 12232312bps delivered:129 app_limited busy:6344ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38867624163657
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 7907 bytes 70 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:23.624/21.689 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:12827 bytes_retrans:80 bytes_acked:12748 bytes_received:12707 segs_out:246 segs_in:245 data_segs_out:132 data_segs_in:131 send 3432442bps lastsnd:208 lastrcv:208 lastack:164 pacing_rate 4118904bps delivery_rate 12232312bps delivered:132 app_limited busy:6436ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38868238288176
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 8951 bytes 79 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.811/21.957 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:13277 bytes_retrans:80 bytes_acked:13198 bytes_received:13149 segs_out:255 segs_in:254 data_segs_out:137 data_segs_in:136 send 3554776bps lastsnd:128 lastrcv:132 lastack:84 pacing_rate 4265584bps delivery_rate 12232312bps delivered:137 app_limited busy:6540ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38868883303985
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 9995 bytes 88 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.133/21.115 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:13727 bytes_retrans:80 bytes_acked:13648 bytes_received:13591 segs_out:264 segs_in:263 data_segs_out:142 data_segs_in:141 send 3663670bps lastsnd:52 lastrcv:60 lastack:8 pacing_rate 4396328bps delivery_rate 12232312bps delivered:142 app_limited busy:6644ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38869489456355
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 10440 bytes 92 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.776/20.822 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:13908 bytes_retrans:80 bytes_acked:13829 bytes_received:13772 segs_out:268 segs_in:267 data_segs_out:144 data_segs_in:143 send 3560239bps lastsnd:292 lastrcv:296 lastack:252 pacing_rate 4272216bps delivery_rate 12232312bps delivered:144 app_limited busy:6692ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38870087074290
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 11484 bytes 101 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:21.639/22.083 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:14358 bytes_retrans:80 bytes_acked:14279 bytes_received:14214 segs_out:277 segs_in:276 data_segs_out:149 data_segs_in:148 send 3747308bps lastsnd:200 lastrcv:200 lastack:152 pacing_rate 4496608bps delivery_rate 12232312bps delivered:149 app_limited busy:6792ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38870687345251
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 12374 bytes 109 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.905/22.051 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:14720 bytes_retrans:80 bytes_acked:14641 bytes_received:14576 segs_out:285 segs_in:284 data_segs_out:153 data_segs_in:152 send 3540188bps lastsnd:92 lastrcv:96 lastack:48 pacing_rate 4248080bps delivery_rate 12232312bps delivered:153 app_limited busy:6876ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38871300301474
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 13140 bytes 115 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:220 rtt:19.621/20.47 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:15090 bytes_retrans:80 bytes_acked:15011 bytes_received:14917 segs_out:291 segs_in:291 data_segs_out:157 data_segs_in:156 send 4132715bps lastsnd:64 lastrcv:36 lastack:36 pacing_rate 4959224bps delivery_rate 12232312bps delivered:157 app_limited busy:6956ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38871919414424
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 13863 bytes 122 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:23.116/21.587 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:15351 bytes_retrans:80 bytes_acked:15272 bytes_received:15199 segs_out:298 segs_in:297 data_segs_out:160 data_segs_in:159 send 3507873bps lastsnd:216 lastrcv:216 lastack:172 pacing_rate 4209288bps delivery_rate 12232312bps delivered:160 app_limited busy:7052ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38872510716235
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 14907 bytes 131 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.294/21.354 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:15801 bytes_retrans:80 bytes_acked:15722 bytes_received:15641 segs_out:307 segs_in:306 data_segs_out:165 data_segs_in:164 send 3637212bps lastsnd:140 lastrcv:144 lastack:96 pacing_rate 4364600bps delivery_rate 12232312bps delivered:165 app_limited busy:7152ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38873103603508
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 15951 bytes 140 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      80       10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:220 rtt:18.271/20.734 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:16251 bytes_retrans:80 bytes_acked:16092 bytes_received:16083 segs_out:316 segs_in:314 data_segs_out:170 data_segs_in:169 send 4438071bps lastsnd:16 lastrcv:20 lastack:20 pacing_rate 5325536bps delivery_rate 12232312bps delivered:169 app_limited busy:7216ms unacked:1 retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38873712988544
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 16396 bytes 144 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.234/22 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:16432 bytes_retrans:80 bytes_acked:16353 bytes_received:16264 segs_out:320 segs_in:319 data_segs_out:172 data_segs_in:171 send 3647027bps lastsnd:272 lastrcv:276 lastack:228 pacing_rate 4376304bps delivery_rate 12232312bps delivered:172 app_limited busy:7292ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38874299660785
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 17440 bytes 153 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:21.383/20.842 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:16882 bytes_retrans:80 bytes_acked:16803 bytes_received:16706 segs_out:329 segs_in:328 data_segs_out:177 data_segs_in:176 send 3792171bps lastsnd:148 lastrcv:148 lastack:104 pacing_rate 4550552bps delivery_rate 12232312bps delivered:177 app_limited busy:7384ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38875011054917
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 18330 bytes 161 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.965/22.2 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:17244 bytes_retrans:80 bytes_acked:17165 bytes_received:17068 segs_out:337 segs_in:336 data_segs_out:181 data_segs_in:180 send 3530938bps lastsnd:52 lastrcv:52 lastack:8 pacing_rate 4237008bps delivery_rate 12232312bps delivered:181 app_limited busy:7480ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38875623424129
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 19374 bytes 170 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.139/21.961 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:17694 bytes_retrans:80 bytes_acked:17615 bytes_received:17510 segs_out:346 segs_in:345 data_segs_out:186 data_segs_in:185 send 3662677bps lastsnd:48 lastrcv:48 lastack:4 pacing_rate 4395056bps delivery_rate 12232312bps delivered:186 app_limited busy:7572ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38876241866100
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 20140 bytes 176 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:220 rtt:18.059/20.502 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:18064 bytes_retrans:80 bytes_acked:17985 bytes_received:17851 segs_out:352 segs_in:352 data_segs_out:190 data_segs_in:189 send 4490171bps lastsnd:28 lastrcv:24 lastack:24 pacing_rate 5388200bps delivery_rate 12232312bps delivered:190 app_limited busy:7628ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38876837044933
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 20863 bytes 183 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.051/21.751 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:18325 bytes_retrans:80 bytes_acked:18246 bytes_received:18133 segs_out:359 segs_in:358 data_segs_out:193 data_segs_in:192 send 3677294bps lastsnd:220 lastrcv:224 lastack:180 pacing_rate 4412576bps delivery_rate 12232312bps delivered:193 app_limited busy:7716ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38877447439936
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 21907 bytes 192 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:21.467/20.918 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:18775 bytes_retrans:80 bytes_acked:18696 bytes_received:18575 segs_out:368 segs_in:367 data_segs_out:198 data_segs_in:197 send 3777333bps lastsnd:96 lastrcv:100 lastack:56 pacing_rate 4532792bps delivery_rate 12232312bps delivered:198 app_limited busy:7812ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38878081477697
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 22797 bytes 200 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      80       10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:20.138/19.473 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:19137 bytes_retrans:80 bytes_acked:18978 bytes_received:18937 segs_out:376 segs_in:374 data_segs_out:202 data_segs_in:201 send 4026616bps lastsnd:20 lastrcv:20 lastack:20 pacing_rate 4831816bps delivery_rate 12232312bps delivered:201 app_limited busy:7880ms unacked:1 retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38878759646589
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 23563 bytes 206 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      80       10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:220 rtt:19.269/20.584 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:19587 bytes_retrans:80 bytes_acked:19428 bytes_received:19379 segs_out:385 segs_in:383 data_segs_out:207 data_segs_in:206 send 4208210bps lastsnd:8 lastrcv:12 lastack:12 pacing_rate 5049688bps delivery_rate 12232312bps delivered:206 app_limited busy:7968ms unacked:1 retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38879377567172
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 24286 bytes 213 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.861/21.75 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:19768 bytes_retrans:80 bytes_acked:19689 bytes_received:19560 segs_out:389 segs_in:388 data_segs_out:209 data_segs_in:208 send 3547001bps lastsnd:272 lastrcv:276 lastack:228 pacing_rate 4256328bps delivery_rate 12232312bps delivered:209 app_limited busy:8052ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38879985874571
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 25330 bytes 222 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.492/22.197 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:20218 bytes_retrans:80 bytes_acked:20139 bytes_received:20002 segs_out:398 segs_in:397 data_segs_out:214 data_segs_in:213 send 3605193bps lastsnd:180 lastrcv:184 lastack:136 pacing_rate 4326080bps delivery_rate 12232312bps delivered:214 app_limited busy:8152ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38880614363521
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 26374 bytes 231 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:21.743/22.338 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:20668 bytes_retrans:80 bytes_acked:20589 bytes_received:20444 segs_out:407 segs_in:406 data_segs_out:219 data_segs_in:218 send 3729384bps lastsnd:100 lastrcv:100 lastack:56 pacing_rate 4475104bps delivery_rate 12232312bps delivered:219 app_limited busy:8252ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38881227437996
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 26986 bytes 236 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:20.063/21.18 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:20950 bytes_retrans:80 bytes_acked:20871 bytes_received:20705 segs_out:412 segs_in:412 data_segs_out:222 data_segs_in:221 send 4041669bps lastsnd:24 lastrcv:20 lastack:20 pacing_rate 4849848bps delivery_rate 12232312bps delivered:222 app_limited busy:8300ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38881825835835
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 27863 bytes 244 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:21.476/21.816 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:21299 bytes_retrans:80 bytes_acked:21220 bytes_received:21067 segs_out:420 segs_in:419 data_segs_out:226 data_segs_in:225 send 3775750bps lastsnd:248 lastrcv:248 lastack:204 pacing_rate 4530712bps delivery_rate 12232312bps delivered:226 app_limited busy:8384ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38882450632689
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 28753 bytes 252 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.904/21.61 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:21661 bytes_retrans:80 bytes_acked:21582 bytes_received:21429 segs_out:428 segs_in:427 data_segs_out:230 data_segs_in:229 send 3540342bps lastsnd:168 lastrcv:172 lastack:124 pacing_rate 4248360bps delivery_rate 12232312bps delivered:230 app_limited busy:8476ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38883066676954
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 29797 bytes 261 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.175/21.351 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:22111 bytes_retrans:80 bytes_acked:22032 bytes_received:21871 segs_out:437 segs_in:436 data_segs_out:235 data_segs_in:234 send 3656731bps lastsnd:72 lastrcv:76 lastack:32 pacing_rate 4387928bps delivery_rate 12232312bps delivered:235 app_limited busy:8572ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38883672434007
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 30563 bytes 267 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:220 rtt:18.367/19.781 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:22481 bytes_retrans:80 bytes_acked:22402 bytes_received:22212 segs_out:443 segs_in:443 data_segs_out:239 data_segs_in:238 send 4414875bps lastsnd:20 lastrcv:20 lastack:20 pacing_rate 5297704bps delivery_rate 12232312bps delivered:239 app_limited busy:8624ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38884298006301
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 31286 bytes 274 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.24/21.294 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:22742 bytes_retrans:80 bytes_acked:22663 bytes_received:22494 segs_out:450 segs_in:449 data_segs_out:242 data_segs_in:241 send 3646043bps lastsnd:180 lastrcv:184 lastack:136 pacing_rate 4375248bps delivery_rate 12232312bps delivered:242 app_limited busy:8712ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38884903140651
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 32330 bytes 283 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:21.573/20.503 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:23192 bytes_retrans:80 bytes_acked:23113 bytes_received:22936 segs_out:459 segs_in:458 data_segs_out:247 data_segs_in:246 send 3758773bps lastsnd:136 lastrcv:140 lastack:96 pacing_rate 4510448bps delivery_rate 12232312bps delivered:247 app_limited busy:8804ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38885524465835
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 33220 bytes 291 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.937/21.707 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:23554 bytes_retrans:80 bytes_acked:23475 bytes_received:23298 segs_out:467 segs_in:466 data_segs_out:251 data_segs_in:250 send 3535249bps lastsnd:56 lastrcv:60 lastack:12 pacing_rate 4242272bps delivery_rate 12232312bps delivered:251 app_limited busy:8900ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38886129047344
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 33819 bytes 296 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:21.988/21.081 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:23823 bytes_retrans:80 bytes_acked:23744 bytes_received:23559 segs_out:472 segs_in:471 data_segs_out:254 data_segs_in:253 send 3687830bps lastsnd:308 lastrcv:308 lastack:260 pacing_rate 4425320bps delivery_rate 12232312bps delivered:254 app_limited busy:8960ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38886761531518
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 34709 bytes 304 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.849/21.327 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:24185 bytes_retrans:80 bytes_acked:24106 bytes_received:23921 segs_out:480 segs_in:479 data_segs_out:258 data_segs_in:257 send 3548864bps lastsnd:192 lastrcv:192 lastack:148 pacing_rate 4258584bps delivery_rate 12232312bps delivered:258 app_limited busy:9044ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38887369940661
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 35753 bytes 313 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.053/21.405 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:24635 bytes_retrans:80 bytes_acked:24556 bytes_received:24363 segs_out:489 segs_in:488 data_segs_out:263 data_segs_in:262 send 3676960bps lastsnd:112 lastrcv:116 lastack:68 pacing_rate 4412248bps delivery_rate 12232312bps delivered:263 app_limited busy:9144ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38887990074981
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 36797 bytes 322 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      80       10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:220 rtt:18.531/19.233 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:25085 bytes_retrans:80 bytes_acked:24926 bytes_received:24805 segs_out:498 segs_in:496 data_segs_out:268 data_segs_in:267 send 4375803bps lastsnd:12 lastrcv:12 lastack:12 pacing_rate 5250712bps delivery_rate 12232312bps delivered:267 app_limited busy:9208ms unacked:1 retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38888581227571
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 37242 bytes 326 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.502/21.15 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:25266 bytes_retrans:80 bytes_acked:25187 bytes_received:24986 segs_out:502 segs_in:501 data_segs_out:270 data_segs_in:269 send 3603591bps lastsnd:264 lastrcv:268 lastack:220 pacing_rate 4324208bps delivery_rate 12232312bps delivered:270 app_limited busy:9288ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38889193400399
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 38286 bytes 335 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:21.426/21.423 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:25716 bytes_retrans:80 bytes_acked:25637 bytes_received:25428 segs_out:511 segs_in:510 data_segs_out:275 data_segs_in:274 send 3784561bps lastsnd:168 lastrcv:172 lastack:124 pacing_rate 4541416bps delivery_rate 12232312bps delivered:275 app_limited busy:9380ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38889821873683
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 39176 bytes 343 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.653/21.568 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:26078 bytes_retrans:80 bytes_acked:25999 bytes_received:25790 segs_out:519 segs_in:518 data_segs_out:279 data_segs_in:278 send 3579570bps lastsnd:88 lastrcv:92 lastack:44 pacing_rate 4295384bps delivery_rate 12232312bps delivered:279 app_limited busy:9468ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38890444767010
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 39942 bytes 349 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      80       10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:220 rtt:18.996/20.441 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:26528 bytes_retrans:80 bytes_acked:26369 bytes_received:26232 segs_out:528 segs_in:526 data_segs_out:284 data_segs_in:283 send 4268688bps pacing_rate 5122288bps delivery_rate 12232312bps delivered:283 app_limited busy:9524ms unacked:1 retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38891063465270
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 40665 bytes 356 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.752/21.721 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:26709 bytes_retrans:80 bytes_acked:26630 bytes_received:26413 segs_out:532 segs_in:531 data_segs_out:286 data_segs_in:285 send 3563994bps lastsnd:252 lastrcv:256 lastack:208 pacing_rate 4276648bps delivery_rate 12232312bps delivered:286 app_limited busy:9616ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38891665819135
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 41709 bytes 365 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.033/20.983 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:27159 bytes_retrans:80 bytes_acked:27080 bytes_received:26855 segs_out:541 segs_in:540 data_segs_out:291 data_segs_in:290 send 3680298bps lastsnd:152 lastrcv:152 lastack:108 pacing_rate 4416328bps delivery_rate 12232312bps delivered:291 app_limited busy:9712ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38892261091845
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 42753 bytes 374 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      80       10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:220 rtt:17.994/20.006 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:27609 bytes_retrans:80 bytes_acked:27450 bytes_received:27297 segs_out:550 segs_in:548 data_segs_out:296 data_segs_in:295 send 4506391bps lastsnd:24 lastrcv:24 lastack:28 pacing_rate 5407552bps delivery_rate 12232312bps delivered:295 app_limited busy:9780ms unacked:1 retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38892887417147
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 43198 bytes 378 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.139/21.514 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:27790 bytes_retrans:80 bytes_acked:27711 bytes_received:27478 segs_out:554 segs_in:553 data_segs_out:298 data_segs_in:297 send 3662677bps lastsnd:284 lastrcv:284 lastack:240 pacing_rate 4395056bps delivery_rate 12232312bps delivered:298 app_limited busy:9852ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38893485051687
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 44242 bytes 387 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:21.478/21.636 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:28240 bytes_retrans:80 bytes_acked:28161 bytes_received:27920 segs_out:563 segs_in:562 data_segs_out:303 data_segs_in:302 send 3775398bps lastsnd:176 lastrcv:180 lastack:132 pacing_rate 4530368bps delivery_rate 12232312bps delivered:303 app_limited busy:9948ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38894089972606
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 45132 bytes 395 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:22.933/22.234 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:28602 bytes_retrans:80 bytes_acked:28523 bytes_received:28282 segs_out:571 segs_in:570 data_segs_out:307 data_segs_in:306 send 3535865bps lastsnd:68 lastrcv:68 lastack:24 pacing_rate 4242968bps delivery_rate 12232312bps delivered:307 app_limited busy:10044ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38894694965503
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 45898 bytes 401 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:220 rtt:19.088/20.855 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:28972 bytes_retrans:80 bytes_acked:28893 bytes_received:28623 segs_out:577 segs_in:577 data_segs_out:311 data_segs_in:310 send 4248114bps lastsnd:24 lastrcv:20 lastack:20 pacing_rate 5097536bps delivery_rate 12232312bps delivered:311 app_limited busy:10096ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
+38895315365397
+qdisc fq_codel 0: root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+ Sent 46621 bytes 408 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+  maxpacket 0 drop_overlimit 0 new_flow_count 0 ecn_mark 0
+  new_flows_len 0 old_flows_len 0
+State Recv-Q Send-Q Local Address:Port  Peer Address:Port
+ESTAB 0      0        10.10.30.20:58368  10.10.30.10:5061
+	 cubic wscale:8,7 rto:224 rtt:23/21.819 ato:40 mss:1448 pmtu:1500 rcvmss:1272 advmss:1448 cwnd:7 ssthresh:7 bytes_sent:29233 bytes_retrans:80 bytes_acked:29154 bytes_received:28905 segs_out:584 segs_in:583 data_segs_out:314 data_segs_in:313 send 3525565bps lastsnd:228 lastrcv:228 lastack:184 pacing_rate 4230648bps delivery_rate 12232312bps delivered:314 app_limited busy:10188ms retrans:0/1 rcv_space:14480 rcv_ssthresh:66984 minrtt:0.947 snd_wnd:66560 rcv_wnd:67072
